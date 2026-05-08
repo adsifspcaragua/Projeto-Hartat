@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "projeto-hartat",
+	"name": "hartat",
 	"compatibility_date": "2026-05-07",
 	"pages_build_output_dir": "./dist",
 	"observability": {
@@ -13,7 +13,20 @@
 	"upload_source_maps": true,
 	"compatibility_flags": [
 		"nodejs_compat"
-	]
+	],
+	"r2_buckets": [
+		{
+			"binding": "bucket",
+			"bucket_name": "hartat-bucket",
+		}
+	],
+	"d1_databases": [
+		{
+			"binding": "db",
+			"database_name": "hartat-dashboard",
+			"database_id": "c9bcb76a-c905-4e39-be8c-ecdb465c7c33"
+		}
+	],
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
