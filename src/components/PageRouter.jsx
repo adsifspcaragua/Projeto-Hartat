@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './css/Sidebar.css'
+
 import Home from '../pages/Home'
 import Exposicoes from '../pages/Exposicoes'
 import Acervo from "../pages/Acervo";
+import Cine from '../pages/Cine'
 
 function PageRouter() {
 
@@ -12,6 +14,7 @@ function PageRouter() {
                 <Route index element={<Home />}/>
                 <Route path="/acervo" element={<Acervo />} />
                 <Route path='/exposicoes' element={<Exposicoes />}/>
+                <Route path="/cine-hartat" element={<Cine/>}/> 
             </Routes>
         </BrowserRouter>
     )
