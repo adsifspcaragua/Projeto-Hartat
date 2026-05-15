@@ -5,11 +5,13 @@ import Home from '../pages/Home'
 function PageRouter() {
 
     return(
-        <BrowserRouter>
-            <Routes>
-                <Route index element={<Home />}/>
-            </Routes>
-        </BrowserRouter>
+        <main className='padding-wrapper'>
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<Home />}/>
+                </Routes>
+            </BrowserRouter>
+        </main>
     )
 }
 
