@@ -9,11 +9,14 @@ function App() {
   return (
     <>
       <div className='layout'>
+        
         <Sidebar />
 
         <div className='content'>
+
           <PageRouter />
           <Footer />
+
         </div>
       </div>
     </>
