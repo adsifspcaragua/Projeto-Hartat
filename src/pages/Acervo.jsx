@@ -1,4 +1,4 @@
-import '../components/css/Acervo.css'
+import './css/Acervo.css'
 import{ useState } from "react";
 
 const etnias = [
@@ -75,7 +75,7 @@ const [mostrarFiltros, setMostrarFiltros] = useState(false);
 const etniaSelecionada = dadosEtnias[etniaAtiva];
 
   return (
-    <div className='container'>
+    <div className='acervo-container'>
       <h1 className='pageTitle'>Acervo de obras</h1>
 
       <section className='filter-container'>
