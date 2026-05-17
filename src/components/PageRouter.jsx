@@ -6,12 +6,14 @@ import Acervo from "../pages/Acervo";
 function PageRouter() {
 
     return(
-        <BrowserRouter>
-            <Routes>
-                <Route index element={<Home />}/>
-                <Route path="/acervo" element={<Acervo />} />
-            </Routes>
-        </BrowserRouter>
+        <main className='padding-wrapper'>
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<Home />}/>
+                    <Route path="/acervo" element={<Acervo />} />
+                </Routes>
+            </BrowserRouter>
+        </main>
     )
 }
 

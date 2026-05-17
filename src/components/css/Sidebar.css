@@ -1,5 +1,16 @@
 .sidebar {
-    background-color: red;
-    width: 10px;
-    height: 10px;
+    display: flex;
+    background-color: #C58852;
+
+    width: 260px;
+    height: 100vh;
+
+    flex-shrink: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    width: 100%;
+    height: 100px;
+  }
 }
