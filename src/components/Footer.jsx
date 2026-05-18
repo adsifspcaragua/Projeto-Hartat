@@ -32,11 +32,18 @@ function Footer() {
                 </div>
 
                 <div className='div-texto'>
-                    <p>Endereço: Rua Bartolomeu Bueno da Silva, 1231 - Martim de Sá Caraguatatuba, SP - 11662-300</p>
-
-                    <p>Telefone: +55 (12) 98195-0786 ubuntucaragua@gmail.com</p>
-
-                    <p>Horário de atendimento: Segunda à Domingo, das 9h às 12h e 14h às 17h</p>
+                    <div className='endereco'>
+                        <p>Endereço:</p>
+                        <p>Rua Bartolomeu Bueno da Silva, 1231 - Martim de Sá Caraguatatuba, SP - 11662-300</p>
+                    </div>
+                    <div className='contato'>
+                        <p>Contato:</p>
+                        <p>Telefone: +55 (12) 98195-0786 ubuntucaragua@gmail.com</p>
+                    </div>
+                    <div className='atendimento'>
+                        <p>Horário de atendimento:</p>
+                        <p>Segunda à Domingo, das 9h às 12h e 14h às 17h</p>
+                    </div>
                 </div>
             </div>
 

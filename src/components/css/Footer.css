@@ -9,14 +9,41 @@
     color: white;
     text-align: justify;
     padding-bottom: 0;
+    padding: 0 20px 0 20px;
 }
 
 a {
-  color: green;
+  color: rgb(0, 61, 0);
 }
 
 b {
   color: red;
+}
+
+.endereco {
+    display: flex;
+    flex-direction: column;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.atendimento {
+    display: flex;
+    flex-direction: column;
+}
+.atendimento p {
+    margin: 0;
+}
+
+.contato p {
+    margin: 0;
+}
+
+.endereco p {
+    margin: 0;
 }
 
 .footer img {
@@ -112,9 +139,21 @@ b {
         height: 100%;
     }
 
-    .div-texto p {
+    .div-texto{
         margin-top: 5vh;
         margin-bottom: 0;
+    }
+
+    .endereco p{
+        margin: 0;
+    }
+
+    .contato p{
+        margin: 0;
+    }
+
+    .atendimento p {
+        margin: 0;
     }
 }
 
@@ -127,6 +166,11 @@ b {
         flex-direction: column;
         padding-top: 5vh;
         height: 100%;
+    }
+
+    .footer img{
+        height: 180px;
+        width: 250px;
     }
 
     .imagens {
@@ -147,33 +191,45 @@ b {
     }
 
     .credito p { 
-      animation: none !important;
+      animation: none;
       font-size: 12px; 
       margin-bottom: 5%; 
       text-align: center; 
       height: auto; white-space: 
       normal; width: 100%; 
-      border-right: none; }
+      border-right: none; 
+    }
+
+    .endereco {
+        margin-bottom: 40px;
+    }
+
+    .contato {
+        margin-bottom: 40px;
+    }
+
+    .credito p.is-visible {
+        animation: none;
+    }
 }
 
 /* VOLTA EFEITO EM 600px */
 @media only screen and (max-width: 600px) {
 
     .credito p {
+        width: 32ch;
         white-space: nowrap;
         overflow: hidden;
-
         border-right: .15em solid white;
-
-        width: 0;
     }
 
     .credito p.is-visible {
+        animation:
+        typing 3s steps(39, end) forwards,
+        blink-caret .75s step-end infinite;
+
         opacity: 1;
         transform: translateY(0);
 
-        animation:
-            typing 3s steps(39, end) forwards,
-            blink-caret .75s step-end infinite;
     }
 }
