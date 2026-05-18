@@ -8,28 +8,172 @@
     display: flex;
     color: white;
     text-align: justify;
+    padding-bottom: 0;
+}
+
+a {
+  color: green;
+}
+
+b {
+  color: red;
 }
 
 .footer img {
-  padding: 0 0 20px 20px;
+    padding: 0 0 20px 20px;
+    height: 120px;
+    width: 190px;
+}
+
+.imagens {
+    display: flex;
+    flex-direction: row;
 }
 
 .footer p {
-  padding-left: 20px;
+    padding-left: 20px;
 }
 
 .div-texto {
-  margin: 0 40px 0 0;
-  display: flex;
+    margin: 0 40px 0 0;
+    display: flex;
+    text-align: left;
 }
 
 .credito {
-  
+    background-color: #644B31;
+    height: 8vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* TEXTO */
+.credito p {
+    margin: 0;
+    display: inline-block;
+    color: white;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: all 0.8s ease;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: .15em solid white;
+
+    width: 0;
+}
+
+/* QUANDO APARECER */
+.credito p.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+    animation:
+        typing 3s steps(39, end) forwards,
+        blink-caret .75s step-end infinite;
+}
+
+/* EFEITO DIGITAÇÃO */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 32ch;
+    }
+}
+
+/* CURSOR */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+/* RESPONSIVIDADE 1154px */
+@media only screen and (max-width: 1154px) {
+
+    .footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5vh;
+        height: 100%;
+    }
+
+    .div-texto p {
+        margin-top: 5vh;
+        margin-bottom: 0;
+    }
+}
+
+/* RESPONSIVIDADE 768px */
+@media only screen and (max-width: 768px) {
+
+    .footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5vh;
+        height: 100%;
+    }
+
+    .imagens {
+        flex-direction: column;
+    }
+
+    .div-texto {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        text-align: left;
+    }
+
+    .credito {
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .credito p { 
+      animation: none !important;
+      font-size: 12px; 
+      margin-bottom: 5%; 
+      text-align: center; 
+      height: auto; white-space: 
+      normal; width: 100%; 
+      border-right: none; }
+}
+
+/* VOLTA EFEITO EM 600px */
 @media only screen and (max-width: 600px) {
-  .footer {
-    width: 100%;
-    height: 675px;
-  }
+
+    .credito p {
+        white-space: nowrap;
+        overflow: hidden;
+
+        border-right: .15em solid white;
+
+        width: 0;
+    }
+
+    .credito p.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+
+        animation:
+            typing 3s steps(39, end) forwards,
+            blink-caret .75s step-end infinite;
+    }
 }
