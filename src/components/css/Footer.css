@@ -1,15 +1,14 @@
 .footer {
     background-color: #644B31;
+    margin: 0;
     width: 100%;
-    height: 235px;
+    height: 215px;
+    display: flex;
     align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     margin-top: auto;
-    display: flex;
     color: white;
-    text-align: justify;
-    padding-bottom: 0;
-    padding: 0 20px 0 20px;
 }
 
 a {
@@ -23,6 +22,7 @@ b {
 .endereco {
     display: flex;
     flex-direction: column;
+
 }
 
 .contato {
@@ -36,35 +36,38 @@ b {
 }
 .atendimento p {
     margin: 0;
+    padding: 0;
+    width: 15vw;
 }
 
 .contato p {
     margin: 0;
+    width: 15vw;;
 }
 
 .endereco p {
     margin: 0;
+    width: 15vw;
 }
 
 .footer img {
-    padding: 0 0 20px 20px;
     height: 120px;
-    width: 190px;
+    width: 160px;
 }
 
-.imagens {
+.container {
     display: flex;
-    flex-direction: row;
-}
-
-.footer p {
-    padding-left: 20px;
-}
-
-.div-texto {
-    margin: 0 40px 0 0;
-    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    
+    align-items: center;
+    width: auto;
     text-align: left;
+}
+
+.container p{
+    text-wrap: wrap;
+    overflow-wrap: break-word;
 }
 
 .credito {
@@ -81,6 +84,7 @@ b {
     margin: 0;
     display: inline-block;
     color: white;
+
 
     opacity: 0;
     transform: translateY(20px);
@@ -102,7 +106,8 @@ b {
 
     animation:
         typing 3s steps(39, end) forwards,
-        blink-caret .75s step-end infinite;
+        blink-caret .75s step-end infinite,
+        hide-caret 0s linear 3s forwards;
 }
 
 /* EFEITO DIGITAÇÃO */
@@ -116,12 +121,15 @@ b {
     }
 }
 
+
+@keyframes hide-caret {
+    to {
+        border-right-color: transparent;
+    }
+}
+
 /* CURSOR */
 @keyframes blink-caret {
-    from,
-    to {
-        border-color: transparent;
-    }
 
     50% {
         border-color: white;
@@ -129,36 +137,40 @@ b {
 }
 
 /* RESPONSIVIDADE 1154px */
-@media only screen and (max-width: 1154px) {
+@media only screen and (max-width: 1179px) {
 
     .footer {
         width: 100%;
-        display: flex;
-        flex-direction: column;
         padding-top: 5vh;
         height: 100%;
     }
 
-    .div-texto{
+    .footer img {
+        height: 150px;
+        width: 100%;
+    }
+
+    .container{
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
         margin-top: 5vh;
         margin-bottom: 0;
+        width: 100%;
+        align-items: center;
+        text-align: left;
     }
 
-    .endereco p{
-        margin: 0;
+    .container p {
+        width: 600px;
+        padding-left: 40px;
+        text-wrap-mode: wrap;
     }
 
-    .contato p{
-        margin: 0;
-    }
-
-    .atendimento p {
-        margin: 0;
-    }
 }
 
 /* RESPONSIVIDADE 768px */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 876px) {
 
     .footer {
         width: 100%;
@@ -177,10 +189,11 @@ b {
         flex-direction: column;
     }
 
-    .div-texto {
+    .container p{
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 300px;
+        margin-right: 40px;
         text-align: left;
     }
 
@@ -223,10 +236,18 @@ b {
         border-right: .15em solid white;
     }
 
+    
+    @keyframes hide-caret {
+        to {
+            border-right-color: transparent;
+        }
+    }
+
     .credito p.is-visible {
         animation:
         typing 3s steps(39, end) forwards,
-        blink-caret .75s step-end infinite;
+        blink-caret .75s step-end forwards,
+        hide-caret 0s linear 3s forwards;
 
         opacity: 1;
         transform: translateY(0);

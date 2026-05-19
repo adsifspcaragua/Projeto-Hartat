@@ -26,12 +26,9 @@ function Footer() {
     return(
         <footer>
             <div className='footer'>
-                <div className='imagens'>
+                <div className='container'>
                     <img src="./src/assets/logo/Hartat.svg" alt="Logomarca do espaço Hartãt" />
                     <img src="./src/assets/logo/CarloCury.svg" alt="Logomarca do Ceramista Carlo Cury" />
-                </div>
-
-                <div className='div-texto'>
                     <div className='endereco'>
                         <p>Endereço:</p>
                         <p>Rua Bartolomeu Bueno da Silva, 1231 - Martim de Sá Caraguatatuba, SP - 11662-300</p>
