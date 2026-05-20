@@ -4,6 +4,7 @@ import './css/Sidebar.css'
 import Home from '../pages/Home'
 import Acervo from "../pages/Acervo";
 import Cine from '../pages/Cine'
+import Externo from '../pages/Externo'
 
 function PageRouter() {
 
@@ -13,6 +14,7 @@ function PageRouter() {
                 <Route index element={<Home />}/>
                 <Route path="/acervo" element={<Acervo />} />
                 <Route path="/cine-hartat" element={<Cine/>}/> 
+                <Route path="/atividades-externas" element={<Externo />}/>
             </Routes>
         </BrowserRouter>
     )
