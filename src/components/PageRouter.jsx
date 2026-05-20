@@ -17,6 +17,7 @@ function PageRouter() {
                 <Route path="/atividades-externas" element={<Externo />}/>
                 <Route path='/exposicoes' element={<Exposicoes />}/>
                 <Route path="/cine-hartat" element={<Cine/>}/> 
+                <Route path="/atividades-externas" element={<Externo />}/>
             </Routes>
         </BrowserRouter>
     )
