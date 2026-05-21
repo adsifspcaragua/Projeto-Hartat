@@ -5,8 +5,8 @@ function Sidebar() {
 
     return(
         <aside className="sidebar"> 
-            <div className="sidebar_right">
-                <div className="sidebar_logo"><img src={logoHartat} alt="Logo"/></div>
+            <div className="sidebar_left">
+                <div className="sidebar_logo"><img src={logoHartat} alt="Logo" className="logo_hartat"/></div>
                 <div className="sidebar_menu">
                     <button className="sidebar_menu_item">Inicio</button>
                     <button className="sidebar_menu_item">Sobre</button>
@@ -24,7 +24,7 @@ function Sidebar() {
                 </div>
                 <div className="sidebar_info">lorem ipsum dolor sit amet</div>      
             </div>
-            <div className="sidebar_left"></div>
+            <div className="sidebar_right"></div>
         </aside>
     )
 }
