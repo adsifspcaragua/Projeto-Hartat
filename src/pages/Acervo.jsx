@@ -3,13 +3,13 @@ import '../components/css/Acervo.css'
 
 function Acervo() {
   return (
-     <div>
+     <div className='container'>
       <h1 className='pageTitle'>Acervo de obras</h1>
 
       <div className='filters'>
         <div className='search'>
           <input type='text' placeholder='Pesquisar' />
-          <button className='search=button'>
+          <button className='search-button'>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2z"
               stroke="currentColor"
@@ -39,14 +39,7 @@ function Acervo() {
             </select>
           </div>
       </div>
-
-      <h2>Explore por etnias</h2>
-
-
-
-
-
-     </div>
+    </div>
     
   )
 }
