@@ -1,10 +1,108 @@
+import { useEffect, useState } from 'react'
+import './css/Home.css'
+
 function Home() {
+    const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.626266592157!2d-45.39332926689689!3d-23.61906604998831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd63000dfd49ad%3A0xc121f69cd63fe898!2sPonto%20de%20Cultura%20-%20Espa%C3%A7o%20Hart%C3%A3t-%20Acervo%20Ind%C3%ADgena!5e0!3m2!1spt-BR!2sbr!4v1779816037160!5m2!1spt-BR!2sbr" 
+
+    const [ carouselContent, setCarouselContent ] = useState([])
+    const [ selectedCarouselItem, setSelectedCarouselItem ] = useState(0)
+
+    useEffect(() => {
+        setCarouselContent([
+            { image: 'https://placehold.co/600x400/000000/FFF', text: 'Hello World!', button: { text: 'Click me!', url: '' }},
+            { image: 'https://placehold.co/600x400/000000/FFF', text: 'Hello World!', button: { text: 'Click me!', url: '' }},
+            { image: 'https://placehold.co/600x400/000000/FFF', text: 'Hello World!', button: { text: 'Click me!', url: '' }}
+        ])
+    }, [])
+
     return(
         <>
-            <h1> Hello World! </h1>
-            <h2> Hello World! </h2>
-            <p> Hello World! </p>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quos enim porro a. Odit, ab iste velit harum et assumenda blanditiis non illum deserunt corporis quidem quasi fugiat omnis, libero, nostrum quia repellendus magni in ratione modi reprehenderit delectus. Commodi, possimus? Temporibus commodi necessitatibus fugit error voluptatibus quas accusantium nam expedita, ex veniam cum magnam quia eum saepe dolorum odio sint, blanditiis debitis? Doloribus iste sunt error in impedit a qui deleniti animi saepe explicabo, quis facilis, corporis similique! Nisi reiciendis id quos. Architecto ut, reprehenderit placeat velit cupiditate natus amet mollitia quaerat aliquam voluptatibus obcaecati porro consequuntur nulla. Soluta impedit, placeat ut dolore voluptate non architecto aperiam cumque unde, vero quibusdam perferendis rerum eius ipsam. Aspernatur debitis enim a blanditiis neque nostrum! Quia reprehenderit minima et earum, ipsa sit, autem magni amet explicabo recusandae asperiores vel numquam laboriosam obcaecati labore aliquam eius commodi distinctio unde voluptatibus eum exercitationem blanditiis esse neque. Ratione optio porro, in unde labore atque numquam. Quod eaque culpa libero et modi doloribus blanditiis necessitatibus excepturi ipsa sequi hic molestias, similique, expedita facilis, eveniet perspiciatis fugiat temporibus ipsum nulla quisquam. Ipsa, sint et? Cupiditate exercitationem voluptates ullam nulla quos illum eos ducimus aliquid minus dolores, quo et voluptas error minima pariatur hic corporis obcaecati corrupti autem maiores. Ducimus minima perferendis dicta quasi maiores? Enim eos aspernatur doloribus! Nostrum ducimus minima libero rerum ipsa veritatis ab perferendis autem doloremque odio in quos fugiat inventore non natus similique omnis asperiores, laborum magni. Labore iusto nam nostrum ullam suscipit dolor minima ad doloremque accusantium! Repellat, esse qui quae explicabo nostrum maxime reprehenderit adipisci asperiores ipsam quo, eligendi iure assumenda quisquam commodi aliquam minus aspernatur reiciendis sint aliquid repellendus ducimus eaque quidem? Quas, illo! Asperiores minima labore, alias aliquid temporibus autem quasi eos maxime quibusdam accusamus error saepe dolorem esse tempora repellat repellendus fugiat. Beatae non eos impedit sint consequuntur, sunt ea voluptas doloribus quidem quae distinctio libero voluptates, quasi veniam mollitia, officia exercitationem? Minima odit inventore et odio. Ad laudantium ipsa numquam deleniti ea? Iure voluptatum dicta fugiat cum officia assumenda. Laboriosam labore nihil debitis eius doloremque dolorum eveniet, earum qui tempore asperiores quaerat optio blanditiis similique aperiam distinctio id beatae quod, porro molestiae exercitationem error consectetur. Tempora illum incidunt aliquam modi minima libero in, explicabo amet iste quibusdam inventore? Architecto maiores corrupti aliquid nobis sint sapiente non consectetur expedita suscipit. Repudiandae quia minima officiis. Consequatur, quam? Ratione eligendi temporibus quod, pariatur dicta porro, fuga eaque illo voluptatibus inventore iure nulla totam cupiditate quo blanditiis, ad hic ipsa incidunt sequi. Iusto repudiandae dolorem eius numquam corporis dolor dignissimos asperiores error expedita illum corrupti tenetur temporibus, blanditiis hic cupiditate soluta at provident voluptas aut fugiat. Dicta delectus officia enim nobis nihil omnis ut, numquam, natus magni voluptas expedita aliquam quisquam odit! Laborum nulla exercitationem alias, maxime architecto autem dolorem voluptates corrupti, voluptas ratione repudiandae facere aliquid voluptatibus hic esse quibusdam at distinctio cumque unde, laudantium omnis? Amet, iusto, voluptatem veritatis quo deserunt asperiores eligendi, ea sed beatae cupiditate illum dolores vitae voluptate voluptatum exercitationem fugit numquam soluta? Omnis doloremque autem laboriosam! Eaque ducimus fuga tenetur modi quidem alias fugit quam, placeat debitis quisquam sapiente animi voluptatibus, autem velit repudiandae adipisci veniam neque magnam hic praesentium officiis, voluptatum deleniti tempora. Dolorum sequi excepturi eveniet, ut quaerat obcaecati. Magni veniam natus, labore placeat quos quia, enim doloribus modi dolore incidunt accusamus. Quia ipsum corrupti rerum culpa doloremque! Sequi laboriosam nihil officia quos iure reiciendis natus quidem libero? Odio error maiores quidem necessitatibus natus ullam incidunt ea esse iste accusamus, expedita blanditiis at, ipsum ut assumenda voluptate sit! Eaque sit minima quibusdam quo itaque, consectetur ea id eius dolor reiciendis corporis maiores beatae voluptate illo deserunt consequatur corrupti esse suscipit voluptatum labore provident veritatis ratione unde debitis! Non dolor tenetur temporibus esse deserunt labore ad dolore harum. Debitis, odio magnam quos fugit ducimus, quia totam deleniti officia placeat recusandae dolorum vel vero suscipit. Asperiores, vitae odit eum cupiditate earum libero sit culpa facere excepturi praesentium nam doloremque, sed aspernatur, obcaecati voluptates reiciendis maxime aut quas a quisquam maiores architecto! Ducimus, animi hic. In maxime tempore obcaecati molestiae consequuntur, quibusdam nesciunt exercitationem, laboriosam autem, ipsum voluptatibus veritatis quaerat! Quasi ducimus temporibus autem aspernatur, dolorum maxime. Sequi numquam nobis, neque repellendus nemo ea maiores quibusdam exercitationem rerum! Officia recusandae maxime, et, at facilis nemo vitae accusamus a possimus, minus autem perferendis qui cumque! Quam, unde omnis! Tenetur obcaecati quia sit suscipit minima id, itaque necessitatibus? Aperiam nemo velit voluptatibus cum porro debitis esse ea aliquam? Ipsam consequatur recusandae adipisci voluptas delectus consequuntur dignissimos soluta aut veritatis rerum eum, autem dicta quod, eos asperiores voluptatum, expedita velit esse. Ipsa, aspernatur possimus explicabo odit doloribus sequi et! Quis nesciunt nostrum accusamus at, expedita unde quidem dolores minima nulla minus id et tenetur? Nulla odio est nobis ab assumenda, voluptatum esse. Veritatis quibusdam, velit laudantium doloremque fuga dolores, vel accusantium perspiciatis tempora eligendi, officiis esse necessitatibus. Tempore laborum quidem, necessitatibus temporibus ullam, maiores ratione adipisci expedita a veritatis accusamus sunt in quas at deleniti asperiores atque commodi magni consequatur nisi quae animi? Incidunt atque perspiciatis iure cupiditate accusamus repellat, tempora illo, corrupti assumenda doloribus ducimus, laboriosam consequatur! Eius esse deleniti, quisquam quia ipsum nostrum error veritatis itaque harum possimus tempora libero accusantium omnis molestias asperiores consequuntur cupiditate hic autem nemo fugiat! Tempore ab minus porro. Omnis accusamus itaque eum rem? Soluta odio cupiditate culpa, dolore consectetur hic perferendis, quidem unde ea magnam non voluptas excepturi magni at natus. Eligendi, asperiores numquam libero, aperiam dolore ullam deserunt, debitis similique voluptas tempora temporibus. Laborum placeat quae ex quibusdam minima delectus possimus harum, dolor velit obcaecati reiciendis repellat, animi, quasi dolorem facere eveniet nesciunt porro quo. Temporibus cumque, facere, neque similique laudantium illum suscipit debitis tempora sunt atque nihil fugit modi necessitatibus nemo ratione ullam mollitia eligendi ipsum numquam quisquam facilis libero itaque aliquam! Dicta pariatur vero reprehenderit repellendus et commodi a autem delectus provident quisquam quos eligendi illum ab, deleniti ea repudiandae porro nostrum officia sed nobis, expedita veniam. Repudiandae.</p>
+            <section className="carousel">
+                <div className="carousel-ui">
+                    <i className="fa-solid fa-angle-left fa-3x" />
+                    <div className="carousel-indicators"></div>
+                    <i className="fa-solid fa-angle-right fa-3x" />
+                </div>
+
+                { carouselContent.map((i, index) => <image></image>) }
+            </section>
+
+            <section className="navigation-buttons">
+                <button> <i className="fa-regular fa-calendar" /> Programação </button>
+                <button> <i className="fa-regular fa-image" /> Acervo virtual </button>
+                <button> <i className="fa-solid fa-location-dot" /> Visite-nos </button>
+            </section>
+
+            <section className="about padding-wrapper">
+                <div className='text-content'>
+                    <h1> Sobre o projeto </h1>
+                    <p> 
+                        O Espaço Hartãt conta com um acervo indígena privado com mais de 
+                        duas mil peças de 60 etnias brasileiras e outras culturas da América
+                        Latina, como Peru, Equador, Costa Rica, Colômbia e México. O acervo
+                        inclui tanto obras originais, quanto réplicas criadas por ceramistas
+                        com base em estudos arqueológicos das culturas já extintas. 
+                    </p>
+
+                    <button> Saiba mais </button>
+                </div>
+
+                <div className="image-placeholder" />
+            </section>
+
+            <section className="highlights padding-wrapper">
+                <h1> Destaques </h1>
+            </section>
+
+            <section className="introduction-video padding-wrapper">
+                <h1> Conheça o espaço </h1>
+
+                <iframe 
+                    src="https://www.youtube.com/embed/Eie84qbGSmo" 
+                    title="Espaço Hartãt - Turismo em Caraguatatuba" 
+                    allow="picture-in-picture; web-share" 
+                    allowFullScreen
+                />
+            </section>
+
+            <section className="location padding-wrapper">
+                <div className="text-content">
+                    <h1> Onde estamos </h1>
+
+                    <div className="subsection">
+                        <p>
+                            Endereço: <br />
+                            Rua Bartolomeu Bueno da Silva, 1231 - Martim de Sá < br/>
+                            Caraguatatuba, SP - 11662-300
+                        </p>
+                    </div>
+
+                    <div className="subsection">
+                        <p>
+                            Contato: < br/>
+                            TEL: +55 (12) 98195-0786 <br />
+                            E-mail: ubuntucaragua@gmail.com
+                        </p>
+                    </div>
+
+                    <div className="subsection">
+                        <p>
+                            Horário de atendimento: <br />
+                            Segunda à domingo, das 9h às 12h e das 14h às 17h
+                        </p>
+                    </div>
+                </div>
+
+                <iframe 
+                    src={mapUrl}
+                    allowFullScreen 
+                    loading="lazy" 
+                />
+            </section>
+
+            <section className="groups padding-wrapper">
+                <h1> Grupos sediados </h1>
+             </section>
         </>
     )
 }
