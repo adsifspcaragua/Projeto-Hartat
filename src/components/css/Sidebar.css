@@ -2,7 +2,7 @@
     display: flex;
     background-color: #C58852;
 
-    width: 350px;
+    width:  18.229%;
     height: 100vh;
 
     flex-shrink: 0;
@@ -26,9 +26,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 15px;
+    margin-left: 0.781%;
     width: 90%;
-    height: auto;  
+    height: 18.07vh;  
 }
 
 .logo_hartat {
@@ -42,17 +42,17 @@
     flex-direction: column;
     align-items: flex-start;   
     width: 100%;
-    height: auto; 
+    height: 50vh; 
 }
 
 .sidebar_menu_item {
   background: none;
   border: none;
-  height: 65px;
+  height: 6.923vh;
   width: 100%;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  padding-left: 6.723%;
 }
 
 .sidebar_menu_item:hover{
@@ -67,19 +67,19 @@
 
 span{
   color: #46140A;
-  font-size: 30px;
+  font-size: 1.5625vw;
 }
 
 .separador{
-  height: 3px;
+  height: 0.1563vw;
   width: 80%;
   background-color: #9A6A40;
-  margin-left: 20px;
+  margin-left: 1.0417vw;
 }
 
 .text_button{
   font-family: 'Ubuntu', sans-serif;
-  font-size: 25px;
+  font-size: 1.3021vw;
 }
 
 .sidebar_icons {
@@ -98,8 +98,8 @@ span{
 
 .sidebar_icons a{
   color: #000000;
-  font-size: 30px;
-  margin-right: 15px;
+  font-size: 1.5625vw;
+  margin-right: 0.7813vw;
 }
 
 .sidebar_info{
@@ -112,11 +112,11 @@ span{
 
 .sidebar_info p{
   font-family: 'Ubuntu', sans-serif;
-  font-size: 18px!important;
+  font-size:  0.9375vw!important;
   color: #000000;   
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .sidebar {
     width: 100%;
     height: 100px;
