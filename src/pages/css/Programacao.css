@@ -1,4 +1,6 @@
-/* Variáveis de cor baseadas no seu protótipo */
+/* ==================================================== */
+/* 1. VARIÁVEIS GERAIS                                  */
+/* ==================================================== */
 :root {
   --bg-principal: #fdf6ec;
   --bg-calendario: #ffffff;
@@ -8,20 +10,125 @@
   --texto-claro: #666666;
   --cor-selecionada: #6b4226;
   --borda-selecionada: #60a5fa;
+  --cor-classificacao: #df7a30;
 }
 
-/* Container Principal */
-.app-container {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  padding: 2rem;
+/* Container que abraça a página inteira */
+.pagina-completa-container {
   background-color: var(--bg-principal);
   min-height: 100vh;
+  padding: 4rem 2rem;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem; /* Distância grande entre a área de Destaques e a área do Calendário */
 }
 
-/* ================= LADO ESQUERDO: CALENDÁRIO ================= */
+/* ==================================================== */
+/* 2. SEÇÃO DE DESTAQUES (CARDS COM IMAGEM)             */
+/* ==================================================== */
+.destaques-secao {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px; /* Limita a largura dos cards grandes */
+}
+
+.card-detalhe {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eaeaea;
+}
+
+.card-imagem-wrapper {
+  flex: 0 0 45%;
+  min-height: 300px;
+}
+
+.card-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-conteudo {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card-titulo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  font-family: serif;
+}
+
+.card-descricao {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+}
+
+.card-data-horario {
+  font-weight: bold;
+  color: #000000;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.card-classificacao {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.badge-idade {
+  background-color: var(--cor-classificacao);
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.texto-classificacao {
+  font-weight: bold;
+  color: #000000;
+  font-size: 1rem;
+}
+
+/* ==================================================== */
+/* 3. SEÇÃO DO CALENDÁRIO E EVENTOS DO DIA              */
+/* ==================================================== */
+.calendario-secao {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
 .calendario-wrapper {
   background-color: var(--bg-calendario);
   padding: 1.5rem;
@@ -100,13 +207,15 @@
   font-weight: bold;
 }
 
-.dia-selecionado:hover {
-  background-color: var(--cor-selecionada);
+.dia-hoje-destaque {
+  border: 1px solid var(--cor-selecionada) !important;
+  font-weight: bold;
 }
 
-/* ================= LADO DIREITO: EVENTOS ================= */
+/* Eventos do Lado Direito do Calendário */
 .eventos-wrapper {
   flex: 1;
+  width: 100%;
 }
 
 .eventos-titulo {
@@ -124,7 +233,7 @@
   gap: 1rem;
 }
 
-.evento-card {
+.evento-card-mini {
   display: flex;
   align-items: stretch;
   background-color: var(--bg-card);
@@ -187,10 +296,23 @@
   font-style: italic;
 }
 
-/* Responsividade para celulares */
+/* ==================================================== */
+/* 4. RESPONSIVIDADE (CELULARES)                        */
+/* ==================================================== */
 @media (max-width: 768px) {
-  .app-container {
+  .card-detalhe {
     flex-direction: column;
+  }
+  .card-imagem-wrapper {
+    height: 250px;
+    flex: none;
+  }
+  .card-conteudo {
+    padding: 1.5rem;
+  }
+  .calendario-secao {
+    flex-direction: column;
+    align-items: center;
   }
   .calendario-wrapper {
     max-width: 100%;
