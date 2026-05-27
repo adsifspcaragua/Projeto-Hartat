@@ -10,19 +10,19 @@ function Sidebar() {
                     <img src={logoHartat} alt="Logo" className="logo_hartat"/>{/* Imagem da logo */}
                 </div> 
                 <div className="sidebar_menu"> {/* Área do menu de navegação */}
-                    <button className="sidebar_menu_item">Inicio <span>{">"}</span></button>
+                    <button className="sidebar_menu_item"><a className="text_button">Inicio <span>{">"}</span></a></button>
                         <div className="separador"/>{/* Linha separadora entre itens */}
-                    <button className="sidebar_menu_item">Sobre <span>{">"}</span></button>
+                    <button className="sidebar_menu_item"><a className="text_button">Sobre <span>{">"}</span></a></button>
                         <div className="separador"/>{/* Linha separadora entre itens */}
-                    <button className="sidebar_menu_item">Programação <span>{">"}</span></button>
+                    <button className="sidebar_menu_item"><a className="text_button">Programação <span>{">"}</span></a></button>
                         <div className="separador"/>{/* Linha separadora entre itens */}
-                    <button className="sidebar_menu_item">Projetos <span>{">"}</span></button>
+                    <button className="sidebar_menu_item"><a className="text_button">Projetos <span>{">"}</span></a></button>
                         <div className="separador"/>{/* Linha separadora entre itens */}
-                    <button className="sidebar_menu_item">Acervo <span>{">"}</span></button>
+                    <button className="sidebar_menu_item"><a className="text_button">Acervo <span>{">"}</span></a></button>
                         <div className="separador"/>{/* Linha separadora entre itens */}
-                    <button className="sidebar_menu_item">Cine Hartat <span>{">"}</span></button>
+                    <button className="sidebar_menu_item"><a className="text_button">Cine Hartat <span>{">"}</span></a></button>
                         <div className="separador"/>{/* Linha separadora entre itens */}
-                    <button className="sidebar_menu_item">Intercambios <span>{">"}</span></button>     
+                    <button className="sidebar_menu_item"><a className="text_button">Intercambios <span>{">"}</span></a></button>     
                 </div>
                 <div className="sidebar_icons">{/* Área dos ícones/redes sociais */}
                     <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
