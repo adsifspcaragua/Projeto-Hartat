@@ -24,16 +24,22 @@ function Sidebar() {
                         <div className="separador"/>{/* Linha separadora entre itens */}
                     <button className="sidebar_menu_item"><a className="text_button">Intercambios <span>{">"}</span></a></button>     
                 </div>
-                <div className="sidebar_icons">{/* Área dos ícones/redes sociais */}
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-                <div className="sidebar_info">Rua Bartolomeu Bueno da Silva, 1231 - Martim de Sá
-                Caraguatatuba, SP 
-                +55 (12) 98195-0786
-                </div>{/* Texto/rodapé informativo da sidebar */}      
+                <div className="sidebar_contato">{/* Linha divisória entre o menu e os ícones/rodapé */}
+                    <div className="sidebar_icons">{/* Área dos ícones/redes sociais */}
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                    <div className="sidebar_info">
+                        <p>
+                        Rua Bartolomeu Bueno da<br/>
+                        Silva, 1231 - Martim de Sá<br/>
+                        Caraguatatuba, SP<br/> 
+                        +55 (12) 98195-0786
+                        </p>
+                    </div>{/* Texto/rodapé informativo da sidebar */} 
+                </div>    
             </div>
             <div className="sidebar_right"></div> {/* Parte direita da sidebar, decoração */}
         </aside>
