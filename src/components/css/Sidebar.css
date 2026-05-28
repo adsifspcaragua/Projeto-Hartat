@@ -128,7 +128,7 @@ span{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10vh;
+    height: 70vh;
   }
 
   .topbar_up {
@@ -136,12 +136,14 @@ span{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 10.73vh;
+    height: 9vh;
+    background-color: #C58852;
   }
 
   .topbar_logo{
     display: flex;
-    justify-content: center;  
+    justify-content: center;
+    align-items: center;  
     width: auto;
     height: 100%;
     margin-left: 0;
@@ -149,16 +151,43 @@ span{
 
   .top_logo_hartat{
     width: auto;
-    height: 90%;
-    gap: 5%;
+    height: 80%;
+  }
+
+  .options{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none; 
   }
 
   .options_button{
-    background: none;
-    border: none;
-    width: 20%;
+    width: 100%;
     height: 100%;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .options_button i{
+    color: #1e1e1e;
+  }
+
+  .topbar_down{
+    display: none;
+  }
+
+  .topbar_detail {
+    height: 2.5vh;
+    width: 100%;
+    background-color: #000000;
+  }
+
+
+    
 
 
 

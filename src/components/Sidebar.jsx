@@ -49,7 +49,7 @@ function Sidebar() {
                     <div className="topbar_logo"> {/* Área reservada para a logo */}
                         <img src={logoHartat} alt="Logo" className="top_logo_hartat"/>{/* Imagem da logo */}
                     </div> 
-                    <a className="options_button"><i class="fa-solid fa-bars"></i></a>{/* Botão de opções para menu mobile */}
+                    <button className="options"><a className="options_button"><i class="fa-solid fa-bars"></i></a></button>{/* Botão de opções para menu mobile */}
                 </div>
                 <div className="topbar_down"> {/* Parte inferior da sidebar, onde ficam os itens do menu */}
                     <div className="topbar_menu"> {/* Área do menu de navegação */}
@@ -74,6 +74,7 @@ function Sidebar() {
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div> 
+                <div className="topbar_detail"></div>
             </div>   
         </>
     )
