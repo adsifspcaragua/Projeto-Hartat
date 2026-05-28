@@ -1,35 +1,256 @@
 .footer {
     background-color: #644B31;
+    margin: 0;
     width: 100%;
-    height: 235px;
+    height: 215px;
+    display: flex;
     align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     margin-top: auto;
-    display: flex;
     color: white;
-    text-align: justify;
+}
+
+a {
+  color: rgb(0, 61, 0);
+}
+
+b {
+  color: red;
+}
+
+.endereco {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.atendimento {
+    display: flex;
+    flex-direction: column;
+}
+.atendimento p {
+    margin: 0;
+    padding: 0;
+    width: 15vw;
+}
+
+.contato p {
+    margin: 0;
+    width: 15vw;;
+}
+
+.endereco p {
+    margin: 0;
+    width: 15vw;
 }
 
 .footer img {
-  padding: 0 0 20px 20px;
+    height: 120px;
+    width: 160px;
 }
 
-.footer p {
-  padding-left: 20px;
+.container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    
+    align-items: center;
+    width: auto;
+    text-align: left;
 }
 
-.div-texto {
-  margin: 0 40px 0 0;
-  display: flex;
+.container p{
+    text-wrap: wrap;
+    overflow-wrap: break-word;
 }
 
 .credito {
-  
+    background-color: #644B31;
+    height: 8vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* TEXTO */
+.credito p {
+    margin: 0;
+    display: inline-block;
+    color: white;
+
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: all 0.8s ease;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: .15em solid white;
+
+    width: 0;
+}
+
+/* QUANDO APARECER */
+.credito p.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+    animation:
+        typing 3s steps(39, end) forwards,
+        blink-caret .75s step-end infinite,
+        hide-caret 0s linear 3s forwards;
+}
+
+/* EFEITO DIGITAÇÃO */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 32ch;
+    }
+}
+
+
+@keyframes hide-caret {
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* CURSOR */
+@keyframes blink-caret {
+
+    50% {
+        border-color: white;
+    }
+}
+
+/* RESPONSIVIDADE 1154px */
+@media only screen and (max-width: 1179px) {
+
+    .footer {
+        width: 100%;
+        padding-top: 5vh;
+        height: 100%;
+    }
+
+    .footer img {
+        height: 150px;
+        width: 100%;
+    }
+
+    .container{
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+        margin-bottom: 0;
+        width: 100%;
+        align-items: center;
+        text-align: left;
+    }
+
+    .container p {
+        width: 600px;
+        padding-left: 40px;
+        text-wrap-mode: wrap;
+    }
+
+}
+
+/* RESPONSIVIDADE 768px */
+@media only screen and (max-width: 876px) {
+
+    .footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5vh;
+        height: 100%;
+    }
+
+    .footer img{
+        height: 180px;
+        width: 250px;
+    }
+
+    .imagens {
+        flex-direction: column;
+    }
+
+    .container p{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin-right: 40px;
+        text-align: left;
+    }
+
+    .credito {
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .credito p { 
+      animation: none;
+      font-size: 12px; 
+      margin-bottom: 5%; 
+      text-align: center; 
+      height: auto; white-space: 
+      normal; width: 100%; 
+      border-right: none; 
+    }
+
+    .endereco {
+        margin-bottom: 40px;
+    }
+
+    .contato {
+        margin-bottom: 40px;
+    }
+
+    .credito p.is-visible {
+        animation: none;
+    }
+}
+
+/* VOLTA EFEITO EM 600px */
 @media only screen and (max-width: 600px) {
-  .footer {
-    width: 100%;
-    height: 675px;
-  }
+
+    .credito p {
+        width: 32ch;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: .15em solid white;
+    }
+
+    
+    @keyframes hide-caret {
+        to {
+            border-right-color: transparent;
+        }
+    }
+
+    .credito p.is-visible {
+        animation:
+        typing 3s steps(39, end) forwards,
+        blink-caret .75s step-end forwards,
+        hide-caret 0s linear 3s forwards;
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
 }
