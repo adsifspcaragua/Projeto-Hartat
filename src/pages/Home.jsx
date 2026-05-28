@@ -2,15 +2,23 @@ import { useEffect, useState } from 'react'
 import './css/Home.css'
 import Carousel from '../components/Carousel'
 
+import CarloCury from '../assets/logo/CarloCury.svg'
+import Ubuntu from '../assets/logo/Ubuntu.svg'
+import TSA from '../assets/logo/TSA.svg'
+import GCE from '../assets/logo/GCE.svg'
+
 function Home() {
     const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.626266592157!2d-45.39332926689689!3d-23.61906604998831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd63000dfd49ad%3A0xc121f69cd63fe898!2sPonto%20de%20Cultura%20-%20Espa%C3%A7o%20Hart%C3%A3t-%20Acervo%20Ind%C3%ADgena!5e0!3m2!1spt-BR!2sbr!4v1779816037160!5m2!1spt-BR!2sbr" 
 
     const carouselContent = [
-        {image: 'https://picsum.photos/1000', text: 'Hello world!', button: 'Click Me!'},
-        {image: 'https://picsum.photos/1001', button: 'Click Me!'},
-        {image: 'https://picsum.photos/1002', text: 'Hello world!'}
+        { image: 'https://picsum.photos/1000', text: 'Hello world!', button: 'Click Me!' },
+        { image: 'https://picsum.photos/1001', button: 'Click Me!' },
+        { image: 'https://picsum.photos/1002', text: 'Hello world!' }
     ]
 
+    const highlightsContent = [
+        { image: 'https://picsum.photos/1000', title: 'Hello title!', description: 'This is a description of this super cool item you are seeing right now' }
+    ]
 
     return(
         <>
@@ -93,6 +101,23 @@ function Home() {
 
             <section className="groups padding-wrapper">
                 <h1> Grupos sediados </h1>
+
+                <div className="group-wrapper">
+                    <img src={CarloCury} loading='lazy' />
+                    Carlo Cury Cerâmica
+                </div>
+                <div className="group-wrapper">
+                    <img src={Ubuntu} loading='lazy' />
+                    Ubuntu Cerâmica e Artes
+                </div>
+                <div className="group-wrapper">
+                    <img src={TSA} loading='lazy' />
+                    Tradições e Saberes Artesanais
+                </div>
+                <div className="group-wrapper">
+                    <img src={GCE} loading='lazy' />
+                    Grupo Caraguatatubense de Estudos de Questões Indígenas
+                </div>
              </section>
         </>
     )

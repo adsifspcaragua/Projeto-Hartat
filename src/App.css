@@ -13,6 +13,13 @@
   overflow-y: auto;
 }
 
+.page-display {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
 .padding-wrapper {
   padding: 0 20px;
 }

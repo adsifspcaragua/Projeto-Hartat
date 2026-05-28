@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import './css/Carousel.css'
 
 function Carousel({ content }) {
-    //Expected content format: [ { image: 'image-url', text: 'content-text', button: 'button-text' } ]
+    //Expected content format: [ { image: 'image-url', text: 'content-text (opt.)', button: 'button-text (opt.)' } ]
 
     const [index, setIndex] = useState(0)
     const carouselContentRef = useRef(null)

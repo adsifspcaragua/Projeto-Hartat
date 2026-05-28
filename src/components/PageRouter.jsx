@@ -5,7 +5,7 @@ import Home from '../pages/Home'
 function PageRouter() {
 
     return(
-        <main>
+        <main className='page-display'>
             <BrowserRouter>
                 <Routes>
                     <Route index element={<Home />}/>
