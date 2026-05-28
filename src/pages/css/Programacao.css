@@ -200,15 +200,22 @@
   background-color: #f3f4f6;
 }
 
-.dia-selecionado {
+ .dia-selecionado {
   background-color: var(--cor-selecionada);
   color: white;
   border: 2px solid var(--borda-selecionada);
   font-weight: bold;
 }
 
-.dia-hoje-destaque {
-  border: 1px solid var(--cor-selecionada) !important;
+.dia-atual {
+  font-weight: 900; 
+  color: #000000;
+}
+
+/* Criamos uma classe nova para destacar os dias que possuem eventos */
+.dia-com-evento {
+  background-color: var(--bg-card); /* Usa aquele bege suave do fundo do card */
+  color: #c8372b; /* Uma cor de destaque (ex: o vermelho da sua paleta) */
   font-weight: bold;
 }
 

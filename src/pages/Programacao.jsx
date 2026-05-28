@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import './css/Programacao.css';
 
-import imgExposicao from '../assets/exposicao.jpg';
-import imgCine from '../assets/cine.png';
 
 // --- DADOS MOCKADOS: CARDS DE DESTAQUE NO TOPO ---
 const DADOS_DESTAQUES = [
     {
         id: 1,
-        imagem: imgExposicao, // Substitua pelos seus imports
+        imagem: './src/assets/exposicao.jpg', // Substitua pelos seus imports
         titulo: 'Exposição de obras',
         descricao: 'O Espaço Hartãt conta com um acervo indígena privado com mais de duas mil peças de 60 etnias brasileiras e outras culturas da América Latina, como Peru, Equador, Costa Rica, Colômbia e México. O acervo inclui tanto obras originais, quanto réplicas criadas por ceramistas com base em estudos arqueológicos das culturas já extintas...',
         dataHorario: 'DATA: 09/03/2026 - 19:00 às 23:00',
@@ -17,7 +15,7 @@ const DADOS_DESTAQUES = [
     },
     {
         id: 2,
-        imagem: imgCine, // Substitua pelos seus imports
+        imagem: './src/assets/cine.png', // Substitua pelos seus imports
         titulo: 'Cine Hartãt - Mundurukuyü',
         descricao: 'Nas margens do rio Tapajós, no Pará, a floresta das mulheres-peixe espelha a mitologia Munduruku, na qual humanos, na origem do mundo, se transformaram em floresta, plantas e animais. No dia a dia da aldeia Sawre Muybu, os espíritos da floresta não são apenas forças espirituais ancestrais, mas parte da família que, apesar de muitos anos de invasão e de destruição do território, continua resistindo e muito viva.',
         dataHorario: 'DATA: 09/03/2026 - 19:00 às 23:00',
@@ -33,7 +31,7 @@ const EVENTOS_CALENDARIO = [
     { id: 3, data: '2026-06-02', titulo: 'Oficina de Cestaria', horario: '14:00 às 16:00', corBorda: '#4a3424', icone: '🧺' },
 ];
 
- function Programacao() {
+function Programacao() {
     // Lógica do Calendário 
     const hoje = new Date();
     const [dataAtual, setDataAtual] = useState(hoje);
@@ -57,103 +55,122 @@ const EVENTOS_CALENDARIO = [
         return evento.data === `${ano}-${mesFormatado}-${diaFormatado}`;
     });
 
-   
+
     return (
         <>
-        <main className="pagina-completa-container">
-            {/* ========================================================= */}
-            {/* SEÇÃO SUPERIOR: CALENDÁRIO INTERATIVO                     */}
-            {/* ========================================================= */}
-            <section className="calendario-secao">
+            <main className="pagina-completa-container">
+                {/* ========================================================= */}
+                {/* SEÇÃO SUPERIOR: CALENDÁRIO INTERATIVO                     */}
+                {/* ========================================================= */}
+                <section className="calendario-secao">
 
-                {/* Lado Esquerdo do Calendário */}
-                <div className="calendario-wrapper">
-                    <div className="calendario-header">
-                        <button onClick={mesAnterior} className="calendario-header-btn">&lt;</button>
-                        <div className="calendario-badges">
-                            <span className="badge">{nomeMesCapitalizado}</span>
-                            <span className="badge">{ano}</span>
+                    {/* Lado Esquerdo do Calendário */}
+                    <div className="calendario-wrapper">
+                        <div className="calendario-header">
+                            <button onClick={mesAnterior} className="calendario-header-btn">&lt;</button>
+                            <div className="calendario-badges">
+                                <span className="badge">{nomeMesCapitalizado}</span>
+                                <span className="badge">{ano}</span>
+                            </div>
+                            <button onClick={proximoMes} className="calendario-header-btn">&gt;</button>
                         </div>
-                        <button onClick={proximoMes} className="calendario-header-btn">&gt;</button>
-                    </div>
 
-                    <div className="dias-semana">
-                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
-                    </div>
-
-                    <div className="grid-dias">
-                        {espacosVazios.map((_, index) => <div key={`empty-${index}`}></div>)}
-
-                        {diasDoMes.map(dia => {
-                            const isHojeNoMundoReal = dia === hoje.getDate() && mesNumero === hoje.getMonth() && ano === hoje.getFullYear();
-                            const isSelecionado = dia === diaSelecionado;
-
-                            return (
-                                <button
-                                    key={dia}
-                                    onClick={() => setDiaSelecionado(dia)}
-                                    className={`dia-btn ${isSelecionado ? 'dia-selecionado' : ''} ${isHojeNoMundoReal && !isSelecionado ? 'dia-hoje-destaque' : ''}`}
-                                >
-                                    {dia}
-                                </button>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                {/* Lado Direito do Calendário (Lista de Eventos) */}
-                <div className="eventos-wrapper">
-                    <h2 className="eventos-titulo">📍 Eventos do Dia</h2>
-                    <div className="lista-eventos">
-                        {eventosDoDiaFiltro.length > 0 ? (
-                            eventosDoDiaFiltro.map(evento => (
-                                <div key={evento.id} className="evento-card-mini">
-                                    <div className="evento-faixa" style={{ backgroundColor: evento.corBorda }}></div>
-                                    <div className="evento-data-box">
-                                        <span className="evento-dia">{diaSelecionado}</span>
-                                        <span className="evento-mes">{nomeMesCapitalizado.substring(0, 3)}</span>
-                                        <span className="evento-icone">{evento.icone}</span>
-                                    </div>
-                                    <div className="evento-info">
-                                        <h3>{evento.titulo}</h3>
-                                        <p>Horário: {evento.horario}</p>
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <p className="sem-eventos">Não há eventos programados para este dia.</p>
-                        )}
-                    </div>
-                </div>
-
-            </section>
-
-            {/* ========================================================= */}
-            {/* SEÇÃO INFERIOR: CARDS DE DESTAQUE                         */}
-            {/* ========================================================= */}
-            <section className="destaques-secao">
-                {DADOS_DESTAQUES.map((evento) => (
-                    <article key={evento.id} className="card-detalhe">
-                        <div className="card-imagem-wrapper">
-                            <img src={evento.imagem} alt={evento.titulo} className="card-imagem" />
+                        <div className="dias-semana">
+                            <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
                         </div>
-                        <div className="card-conteudo">
-                            <h2 className="card-titulo">{evento.titulo}</h2>
-                            <p className="card-descricao">{evento.descricao}</p>
-                            <p className="card-data-horario">{evento.dataHorario}</p>
 
-                            {evento.classificacaoIdade && (
-                                <div className="card-classificacao">
-                                    <span className="badge-idade">{evento.classificacaoIdade}</span>
-                                    <span className="texto-classificacao">{evento.classificacaoTexto}</span>
-                                </div>
+                        <div className="grid-dias">
+                            {espacosVazios.map((_, index) => <div key={`empty-${index}`}></div>)}
+
+                            {diasDoMes.map(dia => {
+                                // 1. Formata a data do dia que está sendo desenhado para o formato 'YYYY-MM-DD'
+                                const mesFormatadoLoop = String(mesNumero + 1).padStart(2, '0');
+                                const diaFormatadoLoop = String(dia).padStart(2, '0');
+                                const dataStringLoop = `${ano}-${mesFormatadoLoop}-${diaFormatadoLoop}`;
+
+                                // 2. Verifica as condições para este dia
+                                const isHojeNoMundoReal = dia === hoje.getDate() && mesNumero === hoje.getMonth() && ano === hoje.getFullYear();
+                                const isSelecionado = dia === diaSelecionado;
+
+                                // 3. Checa se o dia atual do loop possui algum evento na nossa lista
+                                const temEvento = EVENTOS_CALENDARIO.some(evento => evento.data === dataStringLoop);
+
+                                // 4. Constrói as classes CSS dinamicamente com base nas verificações acima
+                                let classes = 'dia-btn ';
+                                if (isSelecionado) {
+                                    classes += 'dia-selecionado'; // Selecionado tem prioridade total
+                                } else {
+                                    // Se não estiver selecionado, verifica se tem evento ou se é hoje
+                                    if (temEvento) classes += 'dia-com-evento ';
+                                    if (isHojeNoMundoReal) classes += 'dia-atual ';
+                                }
+
+                                return (
+                                    <button
+                                        key={dia}
+                                        onClick={() => setDiaSelecionado(dia)}
+                                        className={classes}
+                                    >
+                                        {dia}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Lado Direito do Calendário (Lista de Eventos) */}
+                    <div className="eventos-wrapper">
+                        <h2 className="eventos-titulo">📍 Eventos do Dia</h2>
+                        <div className="lista-eventos">
+                            {eventosDoDiaFiltro.length > 0 ? (
+                                eventosDoDiaFiltro.map(evento => (
+                                    <div key={evento.id} className="evento-card-mini">
+                                        <div className="evento-faixa" style={{ backgroundColor: evento.corBorda }}></div>
+                                        <div className="evento-data-box">
+                                            <span className="evento-dia">{diaSelecionado}</span>
+                                            <span className="evento-mes">{nomeMesCapitalizado.substring(0, 3)}</span>
+                                            <span className="evento-icone">{evento.icone}</span>
+                                        </div>
+                                        <div className="evento-info">
+                                            <h3>{evento.titulo}</h3>
+                                            <p>Horário: {evento.horario}</p>
+                                        </div>
+                                    </div>
+                                ))
+                            ) : (
+                                <p className="sem-eventos">Não há eventos programados para este dia.</p>
                             )}
                         </div>
-                    </article>
-                ))}
-            </section>
-        </main>
-        </>   
+                    </div>
+
+                </section>
+
+                {/* ========================================================= */}
+                {/* SEÇÃO INFERIOR: CARDS DE DESTAQUE                         */}
+                {/* ========================================================= */}
+                <section className="destaques-secao">
+                    {DADOS_DESTAQUES.map((evento) => (
+                        <article key={evento.id} className="card-detalhe">
+                            <div className="card-imagem-wrapper">
+                                <img src={evento.imagem} alt={evento.titulo} className="card-imagem" />
+                            </div>
+                            <div className="card-conteudo">
+                                <h2 className="card-titulo">{evento.titulo}</h2>
+                                <p className="card-descricao">{evento.descricao}</p>
+                                <p className="card-data-horario">{evento.dataHorario}</p>
+
+                                {evento.classificacaoIdade && (
+                                    <div className="card-classificacao">
+                                        <span className="badge-idade">{evento.classificacaoIdade}</span>
+                                        <span className="texto-classificacao">{evento.classificacaoTexto}</span>
+                                    </div>
+                                )}
+                            </div>
+                        </article>
+                    ))}
+                </section>
+            </main>
+        </>
     );
 }
 
