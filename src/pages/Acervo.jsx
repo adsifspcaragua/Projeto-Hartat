@@ -13,6 +13,23 @@ const etnias = [
   "Wayalapit", "Wayana-Aparai", "Xakriabá", "Xerente", "Yanomami", "Yawalapiti", "Zo’é"
 ];
 
+const dadosEtnias = {
+  "Akroá-Gamela": {
+    imagem: "https://cimi.org.br/wp-content/uploads/2022/12/Povo-Akroa-Gamella-do-Piaui-e-Maranhao-se-reunem-em-encontro-18-a-20-de-novembro-Foto-Cruupyhre-Akroa-Gamella-2-scaled.jpeg",
+    resumo: "Os Akroá-Gamela vivem no estado do Maranhão e protagonizam uma histórica luta pela recuperação de suas terras ancestrais. Inseridos em um contexto de forte resistência, mantêm viva sua identidade étnica, suas redes de parentesco e suas formas tradicionais de organização social e articulação política.",
+    link: "https://pib.socioambiental.org/pt/Povo:Gamela"
+  },
+  "Apiaká": {
+    imagem: "https://img.socioambiental.org/d/357367-5/0315_2007_04.jpg",
+    resumo: "Os Apiaká habitam a região dos rios Tapajós e Teles Pires, nos estados de Mato Grosso e Pará. Tradicionalmente pertencentes à família linguística Tupi-Guarani, destacam-se historicamente por sua grande mobilidade territorial, rica cultura material e forte resistência na afirmação de sua identidade indígena.",
+    link: "https://pib.socioambiental.org/pt/Povo:Apiak%C3%A1"
+  },
+  "Ashininca": {
+    imagem: "https://galeria.socioambiental.org/filestore/7/4/5_2ab0554fd660a0c/745scr_1087e22c2ae3c36.jpg",
+    resumo: "Os Ashininca (ou Ashaninka) pertencem à família linguística Arawak e vivem na região da fronteira entre o Brasil (Acre) e o Peru. São amplamente reconhecidos por sua rica vestimenta tradicional (a kushma), sua forte organização política na defesa da floresta e uma cosmologia profundamente ligada à natureza.",
+    link: "https://pib.socioambiental.org/pt/Povo:Ashaninka"
+  }
+};
 
 
 function Acervo() {
@@ -20,6 +37,8 @@ function Acervo() {
 const [mostrarTodas, setMostrarTodas] = useState(false);
 const [etniaAtiva, setEtniaAtiva] = useState("Todas");
 const [mostrarFiltros, setMostrarFiltros] = useState(false);
+
+const etniaSelecionada = dadosEtnias[etniaAtiva];
 
   return (
     <div className='container'>
@@ -42,16 +61,7 @@ const [mostrarFiltros, setMostrarFiltros] = useState(false);
           className='mobile-filter-btn'
           type='button'
           onClick={() => setMostrarFiltros(!mostrarFiltros)}>
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="4" y1="21" x2="4" y2="14"></line>
-            <line x1="4" y1="10" x2="4" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12" y2="3"></line>
-            <line x1="20" y1="21" x2="20" y2="16"></line>
-            <line x1="20" y1="12" x2="20" y2="3"></line>
-            <line x1="1" y1="14" x2="7" y2="14"></line>
-            <line x1="9" y1="8" x2="15" y2="8"></line>
-            <line x1="17" y1="16" x2="23" y2="16"></line>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal-icon lucide-sliders-horizontal"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/>
           </svg>
         </button>
 
@@ -113,6 +123,33 @@ const [mostrarFiltros, setMostrarFiltros] = useState(false);
         </svg>
         </button>              
       </section>
+
+      {etniaAtiva !== "Todas" && etniaSelecionada && (
+        <section className="banner-etnia">
+          <div className="banner-img-container">
+            <img src={etniaSelecionada.imagem} alt={`Povo ${etniaAtiva}`} />
+          </div>
+
+          <div className="banner-content">
+            <h3 className="banner-title">{etniaAtiva}</h3>
+
+            <p className="banner-text">{etniaSelecionada.resumo}</p>
+
+            <a 
+              href={etniaSelecionada.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="banner-btn">
+              Ver mais sobre os {etniaAtiva}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </section>
+      )}
 
     </div>
     

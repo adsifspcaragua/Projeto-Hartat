@@ -167,6 +167,75 @@ body {
   transform: rotate(180deg);
 }
 
+.banner-etnia {
+    display: flex;
+    max-height: 350px;
+    align-items: stretch;
+    background-color: #fffaf2;
+    border-radius: 12px;
+    margin: 40px 10px 20px 10px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #ccc;
+}
+
+.banner-img-container {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.banner-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.banner-title {
+    color: #4A3021;
+    font-size: 36px;
+    margin: 0 0 5px 0;
+}
+
+.banner-text {
+    color: #4A3021;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+    text-align: left;
+}
+
+.banner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.banner-btn:hover {
+    background-color: #644b31ed;
+}
+
 
 
 @media (max-width: 1050px) {
@@ -216,6 +285,28 @@ body {
         justify-content: space-between;
         padding: 12px 15px;
     }
+
+    .banner-etnia {
+        flex-direction: column; 
+        max-height: none;
+    }
+
+    .banner-img-container {
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .banner-content {
+        padding: 20px;
+        align-items: center;
+        text-align: left;
+
+    }
+
+    .banner-text {
+        text-align: center;
+    }
+
 }
 
 
