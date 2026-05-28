@@ -31,6 +31,40 @@ const dadosEtnias = {
   }
 };
 
+const obras = [
+  { id: 1, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" },
+
+  { id: 2, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" },
+
+  { id: 3, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" },
+
+  { id: 4, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" },
+
+  { id: 5, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" },
+
+  { id: 6, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" },
+
+  { id: 7, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" },
+
+  { id: 8, 
+    titulo: "Cerâmica Terena", 
+    imagem: "src/assets/img/Terena.png" }
+];
+
 
 function Acervo() {
 
@@ -150,6 +184,22 @@ const etniaSelecionada = dadosEtnias[etniaAtiva];
           </div>
         </section>
       )}
+
+    <section className='obra-container'>
+      <div className='obra-grid'>
+        {obras.map((obra) => (
+          <div key={obra.id} className='obra-card'>
+            <div className='obra-img'>
+              <img src={obra.imagem} alt={obra.titulo} />
+            </div>
+            <div className='obra-info'>
+              <h4 className='obra-titulo'>{obra.titulo}</h4>
+              <button className='btn-detalhes'>Detalhes</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
     </div>
     
