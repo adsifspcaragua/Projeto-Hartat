@@ -1,8 +1,14 @@
-.carousel {
+.carouselz {
     display: flex;
     box-shadow: 0 0 40px 26px rgba(0, 0, 0, 0.31) inset;
     height: 400px;
     background-color: gray;
+
+    overflow-y: auto;
+
+    .carousel-item {
+        width: 100%;
+    }
 
     .carousel-ui {
         display: flex;
@@ -103,5 +109,13 @@
     iframe {
         flex: 1;
         border: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    section, section * {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 }

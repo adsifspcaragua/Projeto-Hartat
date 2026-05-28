@@ -1,31 +1,22 @@
 import { useEffect, useState } from 'react'
 import './css/Home.css'
+import Carousel from '../components/Carousel'
 
 function Home() {
     const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.626266592157!2d-45.39332926689689!3d-23.61906604998831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd63000dfd49ad%3A0xc121f69cd63fe898!2sPonto%20de%20Cultura%20-%20Espa%C3%A7o%20Hart%C3%A3t-%20Acervo%20Ind%C3%ADgena!5e0!3m2!1spt-BR!2sbr!4v1779816037160!5m2!1spt-BR!2sbr" 
 
-    const [ carouselContent, setCarouselContent ] = useState([])
-    const [ selectedCarouselItem, setSelectedCarouselItem ] = useState(0)
+    const carouselContent = [
+        {image: 'https://picsum.photos/1000', text: 'Hello world!', button: 'Click Me!'},
+        {image: 'https://picsum.photos/1001', button: 'Click Me!'},
+        {image: 'https://picsum.photos/1002', text: 'Hello world!'}
+    ]
 
-    useEffect(() => {
-        setCarouselContent([
-            { image: 'https://placehold.co/600x400/000000/FFF', text: 'Hello World!', button: { text: 'Click me!', url: '' }},
-            { image: 'https://placehold.co/600x400/000000/FFF', text: 'Hello World!', button: { text: 'Click me!', url: '' }},
-            { image: 'https://placehold.co/600x400/000000/FFF', text: 'Hello World!', button: { text: 'Click me!', url: '' }}
-        ])
-    }, [])
 
     return(
         <>
-            <section className="carousel">
-                <div className="carousel-ui">
-                    <i className="fa-solid fa-angle-left fa-3x" />
-                    <div className="carousel-indicators"></div>
-                    <i className="fa-solid fa-angle-right fa-3x" />
-                </div>
-
-                { carouselContent.map((i, index) => <image></image>) }
-            </section>
+            <Carousel 
+                content={carouselContent}
+            />
 
             <section className="navigation-buttons">
                 <button> <i className="fa-regular fa-calendar" /> Programação </button>
