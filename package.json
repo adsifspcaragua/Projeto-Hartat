@@ -9,6 +9,7 @@
 		"lint": "eslint .",
 		"preview": "npm run build && wrangler pages dev",
 		"deploy": "npm run build && wrangler pages deploy",
+		"schema": "wrangler d1 execute db --local --file=./schema.sql",
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
