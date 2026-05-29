@@ -1,5 +1,6 @@
 import './css/Sidebar.css'
 import logoHartat from '../assets/logo_hartat.webp';
+import DetalheBar from '../assets/detail_topbar.webp';
 
 function Sidebar() {
 
@@ -74,7 +75,9 @@ function Sidebar() {
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div> 
-                <div className="topbar_detail"></div>
+                <div className="topbar_detail">
+                    <img src={DetalheBar} alt="Logo" className="top_logo_hartat"/>
+                </div>
             </div>   
         </>
     )
