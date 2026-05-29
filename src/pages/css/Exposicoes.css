@@ -2,7 +2,7 @@
 .ep-page{
   background:#f5f0eb;
   border-radius: 20px;
-  max-width:600px;
+  max-width:100%;
   margin:0 auto;
   padding:18px 12px 28px;
   min-height:100vh;
@@ -17,14 +17,19 @@
 
 /* FEATURE */
 
+.feature-container {
+  display: flex;
+}
+
 .ep-current-feature{
   margin-bottom:24px;
+  width: 30%;
   cursor:pointer;
 }
 
 .ep-current-feature-image{
-  width:100%;
-  height:170px;
+  width:95%;
+  height:200px;
 
   overflow:hidden;
 
@@ -82,15 +87,6 @@
   background:#a08060;
 }
 
-.ep-current-feature-title{
-  margin-top:8px;
-
-  font-size:14px;
-  font-weight:600;
-
-  color:#2a2a2a;
-}
-
 /* CONTROLES */
 
 .ep-controls{
@@ -104,7 +100,8 @@
 }
 
 .ep-search-box{
-  width:140px;
+  width:90%;
+  height: 30px;
 
   display:flex;
   align-items:center;
@@ -138,7 +135,7 @@
 
   gap:5px;
 
-  font-size:10px;
+  font-size:15px;
 }
 
 .ep-sort-box select{
@@ -149,7 +146,7 @@
 
   padding:3px 6px;
 
-  font-size:10px;
+  font-size:15px;
 }
 
 /* GRID */
@@ -211,7 +208,7 @@
 
   padding:2px 5px;
 
-  font-size:6px;
+  font-size:10px;
   font-weight:700;
 
   border-radius:0 3px 3px 0;
@@ -230,14 +227,14 @@
 
   border-radius:3px;
 
-  font-size:6px;
+  font-size:10px;
   text-align:center;
 }
 
 .ep-expo-name{
   margin-top:4px;
 
-  font-size:10px;
+  font-size:15px;
   line-height:1.25;
 
   color:#2a2a2a;
@@ -263,7 +260,7 @@
 
   cursor:pointer;
 
-  font-size:9px;
+  font-size:17px;
 }
 
 .ep-pagination button.active{
@@ -366,7 +363,7 @@
 
 .ep-modal-main-img{
   width:100%;
-  height:220px;
+  height:370px;
 
   overflow:hidden;
 
@@ -379,7 +376,7 @@
 
 .ep-modal-main-img img{
   width:100%;
-  height:100%;
+  height:370px;
 
   object-fit:cover;
 }

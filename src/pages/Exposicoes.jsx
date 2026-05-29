@@ -1,27 +1,67 @@
 import { useState } from "react";
 import "./css/Exposicoes.css";
+import VeraoImg from "../assets/ExposicaoVerao.png";
 import OutonoImg from "../assets/ExposicaoOutono.png";
+//import PrimaveraImg
+//import InvernoImg
 
-/* ─────────────────────────────────────────────
-   DADOS
-───────────────────────────────────────────── */
+/*DADOS*/
 
-const currentExhibition = {
-  id: 100,
-  name: "Desfolhar de Outono - 2026",
-  artistName: "Harlot",
-  startDate: "26/03",
-  endDate: "15/06",
-  image: OutonoImg,
-  description:
-    "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
-  gallery: [null, null, null]
-};
+const currentExhibition = [
+  {
+    id: 100,
+    name: "Alvorada do Verão - 2026",
+    artistName: "Exposição Regular",
+    startDate: "21/12",
+    endDate: "20/03",
+    image: VeraoImg,
+    description:
+      "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
+    gallery: [null, null, null]
+  },
+  
+  {
+    id: 101,
+    name: "Desfolhar do Outono - 2026",
+    artistName: "Exposição Regular",
+    startDate: "21/03",
+    endDate: "20/06",
+    image: OutonoImg,
+    description:
+      "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
+    gallery: [null, null, null]
+  },
+
+  {
+    id: 102,
+    name: "Florecer da Primavera - 2026",
+    artistName: "Exposição Regular",
+    startDate: "21/06",
+    endDate: "20/09",
+    image: OutonoImg,
+    description:
+      "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
+    gallery: [null, null, null]
+  },
+
+  {
+    id: 103,
+    name: "Instropeção de Inverno - 2026",
+    artistName: "Exposição Regular",
+    startDate: "22/09",
+    endDate: "20/12",
+    image: OutonoImg,
+    description:
+      "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
+    gallery: [null, null, null]
+  },
+]
+
 
 const pastExhibitions = [
   {
     id: 1,
-    name: "Alvorada de verão - 2026",
+    name: "Alvorada de verão - 2025",
     image: null,
     badge: "ALVORADA DE VERÃO",
     dateRange: ["20/12", "a", "15/03"],
@@ -90,9 +130,7 @@ const pastExhibitions = [
 
 const TOTAL_PAGES = 68;
 
-/* ─────────────────────────────────────────────
-   COMPONENTE
-───────────────────────────────────────────── */
+/*COMPONENTE*/
 
 export default function Exposicoes() {
 
@@ -114,10 +152,16 @@ export default function Exposicoes() {
         Exposições atuais
       </h2>
 
-      <div
-        className="ep-current-feature"
-        onClick={() => setSelectedExpo(expo)}
-      >
+
+      <div className="feature-container">
+
+        {currentExhibition.map((expo) => (
+          
+        <div
+          key={expo.id}
+          className="ep-current-feature"
+          onClick={() => setSelectedExpo(expo)}
+        >
 
         <div className="ep-current-feature-image">
 
@@ -128,7 +172,7 @@ export default function Exposicoes() {
               alt={expo.name}
             />
 
-          ) : (
+            ) : (
 
             <div className="ep-current-feature-placeholder">
 
@@ -138,13 +182,19 @@ export default function Exposicoes() {
 
             </div>
 
-          )}
+            )}
+
+          </div>
+
+          <div className="ep-current-feature-info">
+
+            <h3>{expo.name}</h3>
+
+          </div>
 
         </div>
 
-        <div className="ep-current-feature-title">
-          {expo.name}
-        </div>
+        ))}
 
       </div>
 
