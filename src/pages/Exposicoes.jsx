@@ -1,9 +1,26 @@
 import { useState } from "react";
 import "./css/Exposicoes.css";
-import VeraoImg from "../assets/ExposicaoVerao.png";
-import OutonoImg from "../assets/ExposicaoOutono.png";
-//import PrimaveraImg
-//import InvernoImg
+import CapaVerao2026 from "../assets/CapaExpoVerao2026.jpg";
+import CapaOutono2026 from "../assets/CapaExpoOutono2026.png";
+import CapaInverno2026 from "../assets/CapaExpoInverno2026.jpg";
+import CapaPrimavera2025 from "../assets/CapaExpoPrimavera2025.jpg";
+import CapaVerao2025 from "../assets/CapaExpoVerao2025.jpg";
+import CapaOutono2025 from "../assets/CapaExpoOutono2025.jpg";
+import CapaInverno2025 from "../assets/CapaExpoInverno2025.jpg";
+import CapaJardin1 from "../assets/CapaExpoJardin1-2025.jpg";
+import CapaJardin2 from "../assets/CapaExpoJardin2-2025.jpg"
+import ImagemPrimavera1 from "../assets/ExpoPrimavera1.jpg";
+import ImagemPrimavera2 from "../assets/ExpoPrimavera2.jpg";
+import ImagemVerao1 from "../assets/ExpoVerao1.jpg";
+import ImagemOutono1 from "../assets/ExpoOutono1.jpg";
+import ImagemOutono2 from "../assets/ExpoOutono2.jpg";
+import ImagemOutono3 from "../assets/ExpoOutono3.jpg";
+import ImagemOutono4 from "../assets/ExpoOutono4.jpg";
+import ImagemJardin01 from "../assets/ExpoJardin1.jpg";
+import ImagemJardin02 from "../assets/ExpoJardin2.jpg";
+import ImagemJardin03 from "../assets/ExpoJardin3.jpg";
+import ImagemJardin21 from "../assets/ExpoJardinDois1.jpg";
+import ImagemJardin22 from "../assets/ExpoJardinDois2.jpg";
 
 /*DADOS*/
 
@@ -14,10 +31,9 @@ const currentExhibition = [
     artistName: "Exposição Regular",
     startDate: "21/12",
     endDate: "20/03",
-    image: VeraoImg,
+    image: CapaVerao2026,
     description:
-      "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
-    gallery: [null, null, null]
+      "Inspirada na intensidade dos dias ensolarados, 'Alvorada do Verão' celebra a energia, a liberdade e o movimento característicos da estação. A exposição reúne obras marcadas por cores vibrantes, contrastes luminosos e composições que evocam o calor, o mar e os encontros que tornam o verão um período de renovação e descoberta.",
   },
   
   {
@@ -26,34 +42,20 @@ const currentExhibition = [
     artistName: "Exposição Regular",
     startDate: "21/03",
     endDate: "20/06",
-    image: OutonoImg,
+    image: CapaOutono2026,
     description:
       "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
-    gallery: [null, null, null]
-  },
-
-  {
-    id: 102,
-    name: "Florecer da Primavera - 2026",
-    artistName: "Exposição Regular",
-    startDate: "21/06",
-    endDate: "20/09",
-    image: OutonoImg,
-    description:
-      "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
-    gallery: [null, null, null]
   },
 
   {
     id: 103,
-    name: "Instropeção de Inverno - 2026",
+    name: "Instropecção de Inverno - 2026",
     artistName: "Exposição Regular",
-    startDate: "22/09",
-    endDate: "20/12",
-    image: OutonoImg,
+    startDate: "21/06",
+    endDate: "22/09",
+    image: CapaInverno2026,
     description:
       "Uma imersão profunda nas nuances e tons melancólicos do outono. Através de texturas orgânicas e contrastes marcantes, a coleção propõe uma reflexão sobre os ciclos de renovação e a beleza da impermanência.",
-    gallery: [null, null, null]
   },
 ]
 
@@ -62,69 +64,69 @@ const pastExhibitions = [
   {
     id: 1,
     name: "Alvorada de verão - 2025",
-    image: null,
-    badge: "ALVORADA DE VERÃO",
-    dateRange: ["20/12", "a", "15/03"],
-    artistName: "Harlot",
+    image: CapaVerao2025,
+    badge: "EXPOSIÇÃO REGULAR",
+    dateRange: ["20/12", "a", "21/03"],
+    artistName: "EXPOSIÇÃO REGULAR",
     description:
-      "A energia vibrante do sol e a efemeridade dos dias quentes traduzidas em telas expressionistas abstratas.",
-    gallery: [null, null]
+      "Inspirada na intensidade dos dias ensolarados, 'Alvorada do Verão' celebra a energia, a liberdade e o movimento característicos da estação. A exposição reúne obras marcadas por cores vibrantes, contrastes luminosos e composições que evocam o calor, o mar e os encontros que tornam o verão um período de renovação e descoberta.",
+    gallery: [ImagemVerao1]
   },
 
   {
     id: 2,
     name: "Florescer da Primavera - 2025",
-    image: null,
-    badge: "EXPOSIÇÃO",
-    dateRange: null,
-    artistName: "Artes Visuais",
+    image: CapaPrimavera2025,
+    badge: "EXPOSIÇÃO REGULAR",
+    dateRange: ["22/09", "a", "20/12"],
+    artistName: "EXPOSIÇÃO REGULAR",
     description:
       "A explosão de cores e o renascimento da flora sob uma perspectiva contemporânea.",
-    gallery: []
+    gallery: [ImagemPrimavera1, ImagemPrimavera2]
   },
 
   {
     id: 3,
-    name: "Nome da expo. - 2000",
-    image: null,
-    badge: null,
-    dateRange: null,
-    artistName: "Anon",
-    description: "Descrição da exposição.",
-    gallery: []
+    name: "Desfolhar do Outono - 2025",
+    image: CapaOutono2025,
+    badge: "EXPOSIÇÃO REGULAR",
+    dateRange: ["21/03", "a", "20/06"],
+    artistName: "EXPOSIÇÃO REGULAR",
+    description: "Entre folhas que caem e paisagens que se transformam, 'Desfolhar do Outono' convida o visitante a refletir sobre mudança e amadurecimento. As obras exploram tons terrosos, texturas orgânicas e narrativas visuais que representam os ciclos da natureza e a beleza encontrada na impermanência.",
+    gallery: [ImagemOutono1, ImagemOutono2, ImagemOutono3, ImagemOutono4]
   },
 
   {
     id: 4,
-    name: "Nome da expo. - 2000",
-    image: null,
-    badge: null,
-    dateRange: null,
-    artistName: "Anon",
-    description: "Descrição da exposição.",
+    name: "Introspecção de Inverno - 2025",
+    image: CapaInverno2025,
+    badge: "EXPOSIÇÃO REGULAR",
+    dateRange: ["19/07", "a", "15/09"],
+    artistName: "EXPOSIÇÃO REGULAR",
+    description: "Silêncio, contemplação e profundidade definem 'Introspecção de Inverno'. A exposição apresenta trabalhos que exploram a relação entre luz e sombra, utilizando paletas frias e atmosferas minimalistas para estimular momentos de reflexão pessoal e conexão com o mundo interior.",
     gallery: []
   },
 
   {
     id: 5,
-    name: "Nome da expo. - 2000",
-    image: null,
-    badge: null,
+    name: "Legado Ancestral - 2025",
+    image: CapaJardin2,
+    badge: "EXPOSIÇÃO - JARDINS",
     dateRange: null,
     artistName: "Anon",
     description: "Descrição da exposição.",
-    gallery: []
+    gallery: [ImagemJardin21, ImagemJardin22]
   },
 
   {
     id: 6,
-    name: "Nome da expo. - 2000",
-    image: null,
-    badge: null,
-    dateRange: null,
+    name: "Tradições e Saberes - 2025",
+    image: CapaJardin1,
+    badge: "EXPOSIÇÃO - JARDINS",
+    dateRange: ["24/05/2025"],
     artistName: "Anon",
     description: "Descrição da exposição.",
-    gallery: []
+    gallery: [ImagemJardin01, ImagemJardin02, ImagemJardin03]
   }
 ];
 
@@ -317,7 +319,7 @@ export default function Exposicoes() {
             </div>
 
             <div className="ep-expo-name">
-              {item.name}
+              <h4>{item.name}</h4>
             </div>
 
           </div>
@@ -449,6 +451,25 @@ export default function Exposicoes() {
                 <p>
                   {selectedExpo.description}
                 </p>
+
+                <h4>Galeria de Imagens</h4>
+
+                <div className="ep-gallery-grid">
+                  {selectedExpo.gallery?.length ? (
+                    selectedExpo.gallery.map((img, index) => (
+                      <div key={index} className="ep-gallery-item">
+                        <img
+                          src={img}
+                          alt={`${selectedExpo.name} ${index + 1}`}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div className="ep-modal-placeholder-banner">
+                      Sem imagens disponíveis
+                    </div>
+                  )}
+                </div>
 
               </div>
 
