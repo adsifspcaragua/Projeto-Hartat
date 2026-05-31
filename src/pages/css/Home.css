@@ -27,19 +27,24 @@
 }
 
 .about {
-    display: flex;
-    text-align: justify;
-    gap: 20px;
+    display: grid;
 
-    .text-content {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
+    gap: 0 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "title image"
+        "text image"
+        "button image"
+    ;
+
+    h1 { grid-area: title };
+    p { grid-area: text };
+    button { grid-area: button };
+    .image-placeholder { grid-area: image };
 
     .image-placeholder {
         background-color: gray;
-        width: 50%;
+        width: 100%;
         height: auto;
     }
 
@@ -89,5 +94,39 @@
 }
 
 @media only screen and (max-width: 900px) {
-    
+    .navigation-buttons {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+
+        button { width: 100%; }
+    }
+
+    .about {
+        text-align: justify;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "title"
+            "text"
+            "button"
+            "image"
+        ;
+
+        button {
+            justify-self: center;
+        }
+
+        .image-placeholder {
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    .introduction-video {
+        iframe {
+            width: 100%;
+            height: auto;
+
+            aspect-ratio: 16 / 9;
+        }
+    }
 }

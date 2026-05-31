@@ -13,7 +13,8 @@ function Home() {
     const carouselContent = [
         { image: 'https://picsum.photos/1000', text: 'Hello world!', button: 'Click Me!' },
         { image: 'https://picsum.photos/1001', button: 'Click Me!' },
-        { image: 'https://picsum.photos/1002', text: 'Hello world!' }
+        { image: 'https://picsum.photos/1002', text: 'Hello world!' },
+        { image: 'https://picsum.photos/1000', text: 'Lorem ipsum dolor sit amet porro dest martire der mador longdom', button: 'Click Me!' }
     ]
 
     const highlightsContent = [
@@ -21,7 +22,7 @@ function Home() {
     ]
 
     return(
-        <>
+        <main className='page-display'>
             <Carousel 
                 content={carouselContent}
             />
@@ -33,18 +34,17 @@ function Home() {
             </section>
 
             <section className="about padding-wrapper">
-                <div className='text-content'>
-                    <h1> Sobre o projeto </h1>
-                    <p> 
-                        O Espaço Hartãt conta com um acervo indígena privado com mais de 
-                        duas mil peças de 60 etnias brasileiras e outras culturas da América
-                        Latina, como Peru, Equador, Costa Rica, Colômbia e México. O acervo
-                        inclui tanto obras originais, quanto réplicas criadas por ceramistas
-                        com base em estudos arqueológicos das culturas já extintas. 
-                    </p>
+                <h1> Sobre o projeto </h1>
+                
+                <p> 
+                    O Espaço Hartãt conta com um acervo indígena privado com mais de 
+                    duas mil peças de 60 etnias brasileiras e outras culturas da América
+                    Latina, como Peru, Equador, Costa Rica, Colômbia e México. O acervo
+                    inclui tanto obras originais, quanto réplicas criadas por ceramistas
+                    com base em estudos arqueológicos das culturas já extintas. 
+                </p>
 
-                    <button> Saiba mais </button>
-                </div>
+                <button> Saiba mais </button>
 
                 <div className="image-placeholder" />
             </section>
@@ -58,6 +58,7 @@ function Home() {
 
                 <iframe 
                     src="https://www.youtube.com/embed/Eie84qbGSmo" 
+                    width={321}
                     title="Espaço Hartãt - Turismo em Caraguatatuba" 
                     allow="picture-in-picture; web-share" 
                     allowFullScreen
@@ -119,7 +120,7 @@ function Home() {
                     Grupo Caraguatatubense de Estudos de Questões Indígenas
                 </div>
              </section>
-        </>
+        </main>
     )
 }
 

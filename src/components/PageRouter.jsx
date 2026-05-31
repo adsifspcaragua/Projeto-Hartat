@@ -5,13 +5,11 @@ import Home from '../pages/Home'
 function PageRouter() {
 
     return(
-        <main className='page-display'>
-            <BrowserRouter>
-                <Routes>
-                    <Route index element={<Home />}/>
-                </Routes>
-            </BrowserRouter>
-        </main>
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<Home />}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
