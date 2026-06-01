@@ -104,7 +104,7 @@ export default function CatalogContent() {
 
   return (
 
-    <div className="catalog-container">
+    <div className="catalog-container padding-wrapper">
       
       <section className="now-playing">
         <h1 className="section-title">Em cartaz</h1>
