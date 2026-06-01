@@ -2,7 +2,6 @@
 .externo-page {
   padding: 24px 32px;
   background: var(--primary-background-color);
-  min-height: 100%;
 }
 
 .externo-page h1 {
