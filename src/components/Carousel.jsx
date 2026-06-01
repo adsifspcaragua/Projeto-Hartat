@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './css/Carousel.css'
 
 function Carousel({ content }) {
@@ -9,7 +9,6 @@ function Carousel({ content }) {
 
     function scrollToItem(newIndex) {
         const carousel = carouselContentRef.current
-        console.log(carousel)
         if (!carousel) { return }
 
         carousel.scrollTo({ left: newIndex * carousel.clientWidth, behavior: 'smooth'})
@@ -25,6 +24,14 @@ function Carousel({ content }) {
         if (index == content.length - 1) { scrollToItem(0) }
         else { scrollToItem(index + 1) }
     }
+
+    const autoScrollTimeout = useRef(null)
+
+    useEffect(() => {
+        autoScrollTimeout.current = setTimeout(nextItem, 5000)
+        return () => clearTimeout(autoScrollTimeout.current)
+    }, [index])
+    
 
     return(
         <section className='carousel'>
