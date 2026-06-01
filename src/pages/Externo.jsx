@@ -6,7 +6,7 @@ import alanWake3 from '../assets/alanwake3.jpg'
 import alanWake4 from '../assets/alanwake4.jpg'
 import alanWake5 from '../assets/alanwake5.jpg'
 import alanWake6 from '../assets/alanwake6.jpg'
-import '../components/css/Externo.css'
+import './css/Externo.css'
 
 // --- Bandeiras por país ---
 const BR_FLAG = () => (
