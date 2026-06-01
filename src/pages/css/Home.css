@@ -3,6 +3,13 @@
     color: var(--text-color);
 }
 
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
 .navigation-buttons {
     display: flex;
     justify-content: space-evenly;

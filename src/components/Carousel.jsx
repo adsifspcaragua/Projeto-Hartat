@@ -34,7 +34,7 @@ function Carousel({ content }) {
     
 
     return(
-        <section className='carousel'>
+        <div className='carousel'>
             <div className="carousel-ui">
                 <i className="fa-solid fa-angle-left fa-3x" onClick={previousItem} />
                 <i className="fa-solid fa-angle-right fa-3x" onClick={nextItem} />
@@ -54,7 +54,7 @@ function Carousel({ content }) {
                     )
                 }
             </div>
-        </section>
+        </div>
     )
 }
 

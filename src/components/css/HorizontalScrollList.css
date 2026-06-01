@@ -1,0 +1,22 @@
+.horizontal-scroll-list {
+    display: flex;
+    position: relative;
+}
+
+.horizontal-scroll-list .scroll-list-items {
+    display: flex;
+    gap: 30px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    padding: 0 50px;
+}
+
+.horizontal-scroll-list .scroll-list-ui {
+    position: absolute;
+    width: 100%;
+
+    :first-child { float: left }
+    :last-child { float: right }
+}
