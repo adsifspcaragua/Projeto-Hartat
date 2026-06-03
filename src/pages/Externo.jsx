@@ -6,50 +6,29 @@ import alanWake3 from '../assets/alanwake3.jpg'
 import alanWake4 from '../assets/alanwake4.jpg'
 import alanWake5 from '../assets/alanwake5.jpg'
 import alanWake6 from '../assets/alanwake6.jpg'
+import post1 from '../assets/post1.png'
+import post2 from '../assets/post2.png'
+import post3 from '../assets/post3.png' 
 import '../components/css/Externo.css'
 
-// --- Bandeiras por país ---
-const BR_FLAG = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 14">
-    <rect width="20" height="14" fill="#009C3B"/>
-    <polygon points="10,1 19,7 10,13 1,7" fill="#FFDF00"/>
-    <circle cx="10" cy="7" r="2.8" fill="#002776"/>
-  </svg>
-)
-
-const PE_FLAG = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 14">
-    <rect width="7" height="14" fill="#D91023"/>
-    <rect x="7" width="6" height="14" fill="#fff"/>
-    <rect x="13" width="7" height="14" fill="#D91023"/>
-  </svg>
-)
-
-const CR_FLAG = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 14">
-    <rect width="20" height="14" fill="#002B7F"/>
-    <rect y="3.5" width="20" height="7" fill="#CE1126"/>
-    <rect y="4.5" width="20" height="5" fill="#fff"/>
-  </svg>
-)
-
-const FLAGS = { br: BR_FLAG, pe: PE_FLAG, cr: CR_FLAG }
+// Lib que puxa as bandeiras dos países
+import Flags from 'country-flag-icons/react/3x2'
 
 // --- Dados das atividades (substituir por API futuramente) ---
 const ATIVIDADES = [
-  { id: 1, titulo: 'Oficina de Cerâmica na Costa Rica', descricao: 'Fizemos uma oficina de Cerâmica na Costa Rica, onde desenvolvemos atividades de artesanato de vasos e outras obras...', imagem: alanWake1, pais: 'cr', tipo: 'Cerâmica' },
-  { id: 2, titulo: 'Visitia Rio Silveiras - 2025', descricao: 'Visitamos a aldeia do Rio Silveiras no município de Bettiga, onde participamos de atividades como artesanato, danças e muitos outros...', imagem: alanWake2, pais: 'br', tipo: 'Artesanato' },
-  { id: 3, titulo: 'Trujillo - Costa Norte do Peru', descricao: 'Visita da costa norte do Peru para aquisição de novas peças para o nosso acervo...', imagem: alanWake3, pais: 'pe', tipo: 'Artesanato' },
-  { id: 4, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake4, pais: 'br', tipo: 'Dança' },
-  { id: 5, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake5, pais: 'br', tipo: 'Cerâmica' },
-  { id: 6, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake6, pais: 'br', tipo: 'Artesanato' },
+  { id: 1, titulo: 'Oficina de Cerâmica na Costa Rica', descricao: 'Fizemos uma oficina de Cerâmica na Costa Rica, onde desenvolvemos atividades de artesanato de vasos e outras obras...', imagem: post1, pais: 'CR', tipo: 'Cerâmica' },
+  { id: 2, titulo: 'Visitia Rio Silveiras - 2025', descricao: 'Visitamos a aldeia do Rio Silveiras no município de Bettiga, onde participamos de atividades como artesanato, danças e muitos outros...', imagem: post2, pais: 'BR', tipo: 'Artesanato' },
+  { id: 3, titulo: 'Trujillo - Costa Norte do Peru', descricao: 'Visita da costa norte do Peru para aquisição de novas peças para o nosso acervo...', imagem: post3, pais: 'PE', tipo: 'Artesanato' },
+  { id: 4, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake4, pais: 'BR', tipo: 'Dança' },
+  { id: 5, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake5, pais: 'BR', tipo: 'Cerâmica' },
+  { id: 6, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake6, pais: 'BR', tipo: 'Artesanato' },
 ]
 
-const PER_PAGE = 6
+const PER_PAGE = 3
 
 // --- Componente de card individual ---
 function Card({ titulo, descricao, imagem, pais }) {
-  const Flag = FLAGS[pais] || BR_FLAG
+  const Flag = Flags[pais] || Flags.BR
   return (
     <div className="ext-card">
       <div className="ext-card-img">
@@ -74,7 +53,6 @@ function Externo() {
   const [ordem, setOrdem] = useState('Mais popular')
   const [pagina, setPagina] = useState(1)
 
-  // Filtragem por busca e tipo
   const filtered = ATIVIDADES
     .filter(a => {
       const matchBusca = a.titulo.toLowerCase().includes(busca.toLowerCase()) ||
@@ -82,15 +60,13 @@ function Externo() {
       const matchTipo = tipo === 'Todos' || a.tipo === tipo
       return matchBusca && matchTipo
     })
-    // Ordenação
     .sort((a, b) => {
       if (ordem === 'A-Z') return a.titulo.localeCompare(b.titulo)
       if (ordem === 'Z-A') return b.titulo.localeCompare(a.titulo)
       if (ordem === 'Mais recente') return b.id - a.id
-      return a.id - b.id // Mais popular: ordem original
+      return a.id - b.id
     })
 
-  // Paginação
   const totalPaginas = Math.ceil(filtered.length / PER_PAGE) || 1
   const slice = filtered.slice((pagina - 1) * PER_PAGE, pagina * PER_PAGE)
 
@@ -98,7 +74,6 @@ function Externo() {
   const handleTipo = (e) => { setTipo(e.target.value); setPagina(1) }
   const handleOrdem = (e) => { setOrdem(e.target.value); setPagina(1) }
 
-  // Números de página exibidos
   const pageNumbers = []
   for (let i = 1; i <= totalPaginas; i++) pageNumbers.push(i)
   const shownPages = pageNumbers.filter(p =>
