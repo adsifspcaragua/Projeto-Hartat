@@ -24,7 +24,7 @@ const ATIVIDADES = [
   { id: 6, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake6, pais: 'BR', tipo: 'Artesanato' },
 ]
 
-const PER_PAGE = 3
+const PER_PAGE = 6
 
 // --- Componente de card individual ---
 function Card({ titulo, descricao, imagem, pais }) {
