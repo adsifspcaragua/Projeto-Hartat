@@ -1,8 +1,15 @@
 import './css/Sidebar.css'
 import logoHartat from '../assets/logo_hartat.webp';
 import DetalheBar from '../assets/detail_topbar.webp';
+import React, { useState } from 'react';
 
 function Sidebar() {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleComponentes = () => {
+    setIsOpen(!isOpen);
+    };
 
     return(
         <>
@@ -48,36 +55,39 @@ function Sidebar() {
             <div className="topbar">
                 <div className="topbar_up"> {/* Parte esquerda da sidebar, onde fica o conteúdo principal */}
                     <div className="topbar_logo"> {/* Área reservada para a logo */}
-                        <img src={logoHartat} alt="Logo" className="top_logo_hartat"/>{/* Imagem da logo */}
+                        <img src={logoHartat} alt="Logo" className="top_logo_hartat"/>
                     </div> 
-                    <button className="options"><a className="options_button"><i class="fa-solid fa-bars"></i></a></button>{/* Botão de opções para menu mobile */}
+                    <button className="options" onClick={toggleComponentes}><a className="options_button"><i class="fa-solid fa-bars"></i></a></button>
                 </div>
-                <div className="topbar_down"> {/* Parte inferior da sidebar, onde ficam os itens do menu */}
-                    <div className="topbar_menu"> {/* Área do menu de navegação */}
+                {isOpen && (
+                <div className="topbar_down">
+                    <div className="topbar_menu"> 
                         <button className="topbar_menu_item"><a className="text_button">Inicio</a></button>
-                            <div className="separador"/>{/* Linha separadora entre itens */}
+                            <div className="separador"/>
                         <button className="topbar_menu_item"><a className="text_button">Sobre</a></button>
-                            <div className="separador"/>{/* Linha separadora entre itens */}
+                            <div className="separador"/>
                         <button className="topbar_menu_item"><a className="text_button">Programação</a></button>
-                            <div className="separador"/>{/* Linha separadora entre itens */}
+                            <div className="separador"/>
                         <button className="topbar_menu_item"><a className="text_button">Projetos</a></button>
-                            <div className="separador"/>{/* Linha separadora entre itens */}
+                            <div className="separador"/>
                         <button className="topbar_menu_item"><a className="text_button">Acervo</a></button>
-                            <div className="separador"/>{/* Linha separadora entre itens */}
+                            <div className="separador"/>
                         <button className="topbar_menu_item"><a className="text_button">Cine Hartat</a></button>
-                            <div className="separador"/>{/* Linha separadora entre itens */}
+                            <div className="separador"/>
                         <button className="topbar_menu_item"><a className="text_button">Intercambios</a></button>     
                     </div>
-                    <div className="topbar_icons">{/* Área dos ícones/redes sociais */}
+                    <div className="topbar_icons">
                         <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div> 
+                )}
                 <div className="topbar_detail">
                     <img src={DetalheBar} alt="Logo" className="top_logo_hartat"/>
                 </div>
+                
             </div>   
         </>
     )
