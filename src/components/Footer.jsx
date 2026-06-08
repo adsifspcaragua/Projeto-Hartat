@@ -24,7 +24,7 @@ function Footer() {
     }, []);
 
     return(
-        <footer>
+        <footer className='footer-wrapper'>
             <div className='footer'>
                 <div className='container'>
                     <img src="./src/assets/logo/Hartat.svg" alt="Logomarca do espaço Hartãt" />
