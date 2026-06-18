@@ -13,10 +13,32 @@
     padding: 0 50px;
 }
 
+.horizontal-scroll-list .scroll-list-items * {
+    width: 9em;
+}
+
+.horizontal-scroll-list .scroll-list-items .item {
+    h2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
 .horizontal-scroll-list .scroll-list-ui {
     position: absolute;
     width: 100%;
+}
 
-    :first-child { float: left }
-    :last-child { float: right }
+.horizontal-scroll-list .scroll-list-ui * {
+    cursor: pointer;
+}
+
+.horizontal-scroll-list .left-arrow {
+    float: left;
+}
+
+.horizontal-scroll-list .right-arrow {
+    float: right;
 }
