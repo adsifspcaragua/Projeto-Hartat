@@ -10,7 +10,7 @@ const movies = [
     image: 'https://www.cineweb.com.br/img/uploads/filmes/a_febre/a_febre_interna.jpg',
     synopsis: 'A Febre é um filme brasileiro. Justino, um indígena de 45 anos, trabalha como vigilante no porto de cargas de Manaus...',
     date: '12/04/2026',    
-    price: 'Gratuito'
+
   },
   { 
     id: 2, 
@@ -20,7 +20,7 @@ const movies = [
     image: 'https://www.festivalvrambiental.com.br/wp-content/uploads/2025/10/CartazMUNDURUKUYU-330x466.jpg',
     synopsis: 'Nas margens do Tapajós, no Pará, a floresta das mulheres peixe espelha a mitologia Munduruku, onde humanos, na origem do mundo, se transformaram em floresta, plantas e animais. No dia-a-dia da aldeia Sawre Muybu, as mulheres peixes usam as câmeras de cinema para proteger a Amazônia das forças que destroem a floresta, evocando os espíritos da floresta que não são apenas forças espirituais ancestrais, mas parte da família.',
     date: '12/04/2026',    
-    price: 'Gratuito'
+  
   },
    { 
     id: 3, 
@@ -30,7 +30,7 @@ const movies = [
     image: 'https://br.web.img3.acsta.net/img/f2/13/f2139e4e045ae6650268f967368000b1.jfif',
     synopsis: 'A Flor do Buriti acompanha os últimos 80 anos dos Krahô na comunidade da aldeia Pedra Branca, no Tocantins. Em 1940, duas crianças desse povo indígena encontraram um boi perigoso perto da sua aldeia, no meio da floresta em plena escuridão. Era o ponto inicial de um terrível massacre, cometido por dois fazendeiros da região, onde morreram dezenas de indígenas. Durante a Ditadura brasileira, no ano de 1969, os filhos dos sobreviventes são coagidos, obrigados e forçados a integrar uma unidade militar. Hoje, os Krahô continuam sua árdua caminhada pela resistência sobre a sua terra que ainda sangra sob diante de velhas e novas ameaças.',
     date: '12/04/2026',    
-    price: 'Gratuito'
+ 
   },
    { 
     id: 4, 
@@ -40,7 +40,7 @@ const movies = [
     image: 'https://meioamargo.com/wp-content/uploads/2024/01/yvy-pyte-coracao-da-terra-meio-amargo-poster-500x667.jpg',
     synopsis: 'Este documentário discorre bastante a respeito de si próprio. Enquanto narrador em off, um dos dois diretores, Alberto Alvares, informa que está em busca de suas raízes, retornando às terras onde nasceu. Afirma o desejo de erguer uma homenagem ao povo guarani, que luta para permanecer em terras demarcadas e tomadas pelos brancos. Revela cada intenção, justifica as escolhas, anuncia os próximos passos (as cidades que pretende visitar). Torna-se uma espécie de guia ao espectador.',
     date: '12/04/2026',    
-    price: 'Gratuito'
+  
   },
    { 
     id: 5, 
@@ -50,7 +50,7 @@ const movies = [
     image: 'https://www.cineweb.com.br/img/uploads/filmes/a_febre/a_febre_interna.jpg',
     synopsis: 'A Febre é um filme brasileiro. Justino, um indígena de 45 anos, trabalha como vigilante no porto de cargas de Manaus...',
     date: '12/04/2026',    
-    price: 'Gratuito'
+  
   },
    { 
     id: 6, 
@@ -60,7 +60,7 @@ const movies = [
     image: 'https://www.cineweb.com.br/img/uploads/filmes/a_febre/a_febre_interna.jpg',
     synopsis: 'A Febre é um filme brasileiro. Justino, um indígena de 45 anos, trabalha como vigilante no porto de cargas de Manaus...',
     date: '12/04/2026',    
-    price: 'Gratuito'
+ 
   },
    { 
     id: 7, 
@@ -70,7 +70,7 @@ const movies = [
     image: 'https://www.cineweb.com.br/img/uploads/filmes/a_febre/a_febre_interna.jpg',
     synopsis: 'A Febre é um filme brasileiro. Justino, um indígena de 45 anos, trabalha como vigilante no porto de cargas de Manaus...',
     date: '12/04/2026',    
-    price: 'Gratuito'
+
   },
    { 
     id: 8, 
@@ -80,7 +80,7 @@ const movies = [
     image: 'https://www.cineweb.com.br/img/uploads/filmes/a_febre/a_febre_interna.jpg',
     synopsis: 'A Febre é um filme brasileiro. Justino, um indígena de 45 anos, trabalha como vigilante no porto de cargas de Manaus...',
     date: '12/04/2026',    
-    price: 'Gratuito'
+
   }
 ];
 
@@ -160,7 +160,6 @@ export default function CatalogContent() {
 
             <div className="modal-body">
               <p><strong>Data de exibição:</strong> {selectedMovie.date}</p>
-              <p><strong>Valor da entrada:</strong> {selectedMovie.price}</p>
               <br/>
               <p><strong>Sinopse:</strong><br/>{selectedMovie.synopsis}</p>
               <br/>
