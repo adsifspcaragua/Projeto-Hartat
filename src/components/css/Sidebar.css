@@ -1,237 +1,292 @@
-.topbar {
-  display: none;
-}
+/* ========================================= */
+/* ESTILOS GERAIS E DESKTOP (Acima de 900px) */
+/* ========================================= */
+
 .sidebar {
-    display: flex;
-    background-color: #C58852;
-
-    width:  18.229%;
-    height: 100vh;
-    max-height: 2160px;
-
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #C58852;
+  width: 18.229%;
+  height: 100vh;
+  max-height: 2160px;
+  flex-shrink: 0;
+  border-right: 15px solid black; /* Substitui a antiga div vazia "sidebar_right" */
 }
 
-.sidebar_right{
-  background-color: black;
-  width: 15%;
-  height: auto;
-}
-
-.sidebar_left{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;   
-    width: 85%;  
+/* O Cabeçalho com a Logo */
+.sidebar_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 18.07vh;
 }
 
 .sidebar_logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-left: 0.781%;
-    width: 90%;
-    height: 18.07vh;  
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo_hartat {
-  margin-top: 15%;
   width: 100%;
-  height: 100%;
+  height: 80%;
+  object-fit: contain; 
+}
+
+/* Esconde o botão hambúrguer no PC */
+.hamburger_btn {
+  display: none; 
+}
+
+/* O conteúdo principal da barra */
+.sidebar_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1; /* Faz o conteúdo ocupar o resto da tela */
 }
 
 .sidebar_menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;   
-    width: 100%;
-    height: 50vh; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .sidebar_menu_item {
-  background: none;
-  border: none;
+  text-decoration: none;
   height: 6.923vh;
   width: 100%;
   display: flex;
   align-items: center;
   padding-left: 6.723%;
+  transition: background-color 0.2s ease;
 }
 
-.sidebar_menu_item:hover{
+.sidebar_menu_item:hover {
   background-color: #46140A;
-  cursor: pointer;
 }
 
-.sidebar_menu_item:hover .text_button{
+.sidebar_menu_item:hover .text_button,
+.sidebar_menu_item:hover .arrow {
   color: white; 
-  cursor: pointer;
 }
 
-span{
+.arrow {
   color: #46140A;
-  font-size: 1.5625vw;
+  font-size: 1.56vw;
 }
 
-.separador{
-  height: 0.1563vw;
+.separador {
+  height: 2px;
   width: 80%;
   background-color: #9A6A40;
-  margin-left: 1.0417vw;
+  margin-left: 1.04vw;
 }
 
-.text_button{
+.text_button {
   font-family: 'Ubuntu', sans-serif;
-  font-size: 1.3021vw;
+  font-size: 1.3vw;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.sidebar_contato {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .sidebar_icons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  
+  margin-bottom: 2vh;
 }
 
-.sidebar_contato{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-}
-
-.sidebar_icons a{
+.sidebar_icons a {
   color: #000000;
-  font-size: 1.5625vw;
-  margin-right: 0.7813vw;
+  font-size: 1.56vw;
+  margin: 0 0.5vw;
+  transition: color 0.2s ease;
 }
 
-.sidebar_info{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15%;
-  width: 100%;
+.sidebar_icons a:hover {
+  color: #46140A;
 }
 
-.sidebar_info p{
+.sidebar_info {
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+.sidebar_info p {
   font-family: 'Ubuntu', sans-serif;
-  font-size:  0.9375vw!important;
+  font-size: 0.93vw;
   color: #000000;   
 }
 
+/* Esconde a barra de detalhe do mobile no PC */
+.sidebar_detail_mobile {
+  display: none;
+}
+
+
+/* ========================================= */
+/* ESTILOS MOBILE (Abaixo de 900px)          */
+/* ========================================= */
+
 @media only screen and (max-width: 900px) {
+  
+  /* Trava a Sidebar para ser apenas o cabeçalho no mobile */
   .sidebar {
-    display:none;
+    display: block !important; 
+    width: 100% !important;
+    height: 80px !important; /* Altura cravada, não ocupe a tela! */
+    min-height: 80px !important;
+    border-right: none !important;
+    position: relative !important; 
+    z-index: 9999 !important; /* Mantém o menu acima de todo o resto do site */
   }
 
-  .topbar {
-    display: flex;
-    position: relative;
-    align-items: center;  
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    background-color: #C58852;
+  .sidebar_header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 80px !important; 
+    padding: 0 5% !important;
+    background-color: #C58852 !important;
   }
 
-  .topbar_up {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 9vh;
+  .sidebar_logo {
+    height: 50px !important;
+    width: auto !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
-  .topbar_logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    width: auto;
-    height: 100%;
-    margin-left: 0;
+  .logo_hartat {
+    height: 100% !important;
+    width: auto !important;
   }
 
-  .top_logo_hartat{
-    width: auto;
-    height: 80%;
+  .hamburger_btn {
+    display: flex !important;
+    align-items: center !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
   }
 
-  .options{
-    height: 100%;
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    background: none;
-    border: none; 
+  .hamburger_btn i {
+    color: #1e1e1e !important;
+    font-size: 32px !important;
   }
 
-  .options_button{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* O MENU DROPDOWN - Agora flutua por cima do conteúdo do site */
+  .sidebar_content {
+    display: none !important; 
   }
 
-  .options_button i{
-    color: #1e1e1e;
-    max-width: 9.62vw;
+  .sidebar_content.open {
+    display: block !important; 
+    position: absolute !important; /* FLUTUA por cima, não empurra a página */
+    top: 80px !important; /* Começa exatamente onde o header termina */
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background-color: #C58852 !important;
+    padding-bottom: 20px !important; 
+    max-height: calc(100vh - 80px) !important; /* Adiciona scroll se a tela for pequena */
+    overflow-y: auto !important; 
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5) !important;
+    animation: fadeIn 0.3s ease-in-out !important;
   }
 
-  .topbar_menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;   
-    width: 100%;   
-    height: auto;   
+  .sidebar_menu {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
-  .topbar_down{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
+  .sidebar_menu_item {
+    display: flex !important; 
+    align-items: center !important;
+    height: 65px !important;
+    padding-left: 5% !important;
+    text-decoration: none !important;
+    width: 100% !important;
   }
 
-  .topbar_menu_item {
-    background: none;
-    border: none;
-    height: 5vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 6.723%;
+  /* GARANTE QUE O TEXTO APAREÇA FORÇADAMENTE */
+  .text_button {
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 20px !important;
+    color: #000000 !important;
+    display: flex !important; 
+    align-items: center !important;
+    width: 100% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .arrow {
+    display: none !important; 
   }
 
-  .text_button{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 4.5vw;
+  .separador {
+    width: 90% !important;
+    height: 2px !important;
+    background-color: #9A6A40 !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
 
-  .topbar_icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .sidebar_contato {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 20px !important;
   }
 
-  .topbar_icons a{
-  color: #000000;
-  font-size: 6.5vw;
-  margin-right: 7vw;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+  .sidebar_icons {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 15px !important;
   }
 
-  .topbar_detail {
-    height: auto;
-    width: 100%;
-    height: 2vh; 
+  .sidebar_icons a {
+    font-size: 28px !important;
+    margin: 0 15px !important;
+    color: #000000 !important;
   }
 
-  .topbar_detail img{
-    width: 100%;
-    height: 100%;
+  .sidebar_info {
+    text-align: center !important;
+    display: block !important;
+  }
+
+  .sidebar_info p {
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 14px !important;
+    color: #000000 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .sidebar_detail_mobile {
+    display: block !important;
+    width: 100% !important;
+    height: 15px !important;
+  }
+
+  .sidebar_detail_mobile img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
   }
 }
