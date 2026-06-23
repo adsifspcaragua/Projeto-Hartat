@@ -1,0 +1,145 @@
+.sobre-container {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-background-color);
+}
+
+.sobre-container h1{
+    font-size: 45px !important;
+}
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url(../../assets/thumbnail.jfif);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.226);
+  padding: 2rem 4rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #ffffff;
+  box-sizing: border-box; 
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.texto-princiapl-section {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1500px;
+  padding: 4rem 2rem;
+}
+
+.sobre-container .paragraph {
+  font-size: 1.5rem !important;
+  line-height: 1.8;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.texto-alternativo-section {
+  width: 100%;
+  margin: 3rem auto;
+  background-color: #822B00;
+  color: #ffffff;
+  padding: 4rem 3rem;
+  box-sizing: border-box;
+  border: 10px solid var(--primary-color);
+  border-radius: 25px;
+}
+
+.texto-alternativo-section h1{
+    color: #ffffff;
+}
+.text-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-box {
+  flex: 1;
+  text-align: left;
+}
+
+.imagem-historia {
+  width: 45%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+  
+  .hero-overlay {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .text-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .sobre-container .paragraph {
+    font-size: 1.15rem !important;
+  }
+
+  .texto-alternativo-section {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-box {
+    display: contents;
+  }
+
+  .text-box .section-title {
+    order: 1;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .imagem-historia {
+    order: 2;
+    width: 100%;
+    max-height: 450px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-box .paragraph {
+    order: 3;
+    text-align: center;
+  }
+}

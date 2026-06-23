@@ -92,7 +92,6 @@ const featuredMovie = {
   synopsis: 'A Febre é um filme brasileiro. Justino, um indígena de 45 anos, trabalha como vigilante no porto de cargas de Manaus...',
   date: '12/04/2026',    
   price: 'Gratuito',
-  director: 'Maya Da-Rin',
   banner_img: "https://i.ytimg.com/vi/aF1fsR9vvBo/maxresdefault.jpg"
 };
 
