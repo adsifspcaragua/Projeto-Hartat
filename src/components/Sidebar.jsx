@@ -11,42 +11,48 @@ function Sidebar() {
     };
 
     const menuItems = [
-        'Inicio', 'Sobre', 'Programação', 'Projetos', 
-        'Acervo', 'Cine Hartat', 'Intercambios'
+        'Início', 'Sobre', 'Programação', 'Projetos', 
+        'Acervo', 'Cine Hartat', 'Intercâmbios'
     ];
 
     const socialLinks = [
         { icon: 'fa-whatsapp', url: '#' },
         { icon: 'fa-instagram', url: '#' },
         { icon: 'fa-facebook', url: '#' },
-        { icon: 'fa-twitter', url: '#' }
+        { icon: 'fa-youtube', url: '#' }
     ];
 
     return (
-        <aside className="sidebar">
-            {/* 1. ÁREA SUPERIOR (Logo e Botão) */}
+        <aside className={`sidebar ${isOpen ? 'menu_open' : ''}`}>
             <div className="sidebar_header">
                 <div className="sidebar_logo">
                     <img src={logoHartat} alt="Logo Hartat" className="logo_hartat" />
                 </div> 
-                {/* O botão só vai aparecer no Mobile via CSS */}
                 <button className="hamburger_btn" onClick={toggleMenu} aria-label="Menu">
                     <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
                 </button>
             </div>
 
-            {/* 2. ÁREA DE CONTEÚDO (Menu e Contato) */}
-            {/* A classe 'open' é injetada no mobile se o botão for clicado */}
+            {!isOpen && (
+                <div 
+                    className="sidebar_pattern_mobile_closed" 
+                    style={{ backgroundImage: `url(${DetalheBar})` }}
+                />
+            )}
+
             <div className={`sidebar_content ${isOpen ? 'open' : ''}`}>
                 <nav className="sidebar_menu">
-                    {menuItems.map((item, index) => (
-                        <React.Fragment key={index}>
-                            <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="sidebar_menu_item">
-                                <span className="text_button">{item} <span className="arrow">{">"}</span></span>
-                            </a>
-                            {index < menuItems.length - 1 && <div className="separador" />}
-                        </React.Fragment>
-                    ))}
+                    {menuItems.map((item, index) => {
+                        const cleanHref = item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
+                        return (
+                            <React.Fragment key={index}>
+                                <a href={`#${cleanHref}`} className="sidebar_menu_item">
+                                    <span className="text_button">{item} &gt;</span>
+                                </a>
+                                {index < menuItems.length - 1 && <div className="separador" />}
+                            </React.Fragment>
+                        );
+                    })}
                 </nav>
 
                 <div className="sidebar_contato">
@@ -58,18 +64,23 @@ function Sidebar() {
                         ))}
                     </div>
                     <div className="sidebar_info">
-                        <p>
-                            Rua Bartolomeu Bueno da Silva, 1231<br />
-                            Martim de Sá - Caraguatatuba, SP<br />
-                            +55 (12) 98195-0786
-                        </p>
-                    </div> 
-                </div>    
+                        <p>Rua Bartolomeu Bueno da Silva, 1231</p>
+                        <p>Martim de Sá - Caraguatatuba, SP</p>
+                        <p>+55 (12) 98195-0786</p>
+                    </div>
+                </div>
+
+                <div 
+                    className="sidebar_pattern_mobile_open" 
+                    style={{ backgroundImage: `url(${DetalheBar})` }}
+                />
             </div>
             
-            {/* Imagem de detalhe: Só aparece no mobile via CSS */}
-            <div className="sidebar_detail_mobile">
-                <img src={DetalheBar} alt="Detalhe de borda" />
+            <div className="sidebar_pattern_desktop_wrapper">
+                <div 
+                    className="sidebar_pattern_desktop" 
+                    style={{ backgroundImage: `url(${DetalheBar})` }}
+                />
             </div>
         </aside>
     );
