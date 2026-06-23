@@ -9,7 +9,7 @@
 <p>
   <img src="https://img.shields.io/badge/Website-JS & React-blue"> 
   <img src="https://img.shields.io/badge/status-active-green"> 
-  <img src="https://img.shields.io/badge/LICENSE-GLP 3.0-yellow"> 
+  <img src="https://img.shields.io/badge/LICENSE-GPL 3.0-yellow"> 
 </p>
 
 </div>
