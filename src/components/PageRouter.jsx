@@ -1,19 +1,27 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './css/Sidebar.css'
+
 import Home from '../pages/Home'
 import Programacao from '../pages/Programacao'
+import Externo from '../pages/Externo'
+import Exposicoes from '../pages/Exposicoes'
+import Acervo from "../pages/Acervo";
+import Cine from '../pages/Cine'
 
 function PageRouter() {
 
     return(
-        <main className='padding-wrapper'>
-            <BrowserRouter>
-                <Routes>
-                    <Route index element={<Home />}/>
-                    <Route path='/programacao' element={<Programacao/>}/>
-                </Routes>
-            </BrowserRouter>
-        </main>
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<Home />}/>
+                <Route path="/acervo" element={<Acervo />} />
+                <Route path="/atividades-externas" element={<Externo />}/>
+                <Route path='/programacao' element={<Programacao/>}/>
+                <Route path='/exposicoes' element={<Exposicoes />}/>
+                <Route path="/cine-hartat" element={<Cine/>}/> 
+                <Route path="/atividades-externas" element={<Externo />}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
