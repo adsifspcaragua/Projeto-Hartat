@@ -16,7 +16,6 @@
 /* Container que abraça a página inteira */
 .pagina-completa-container {
   background-color: var(--bg-principal);
-  min-height: 100vh;
   padding: 4rem 2rem;
   font-family: sans-serif;
   display: flex;
