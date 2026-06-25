@@ -52,7 +52,20 @@
 
     h1 { grid-area: title };
     p { grid-area: text };
-    button { grid-area: button };
+
+    button { 
+        grid-area: button;
+        height: fit-content;
+    }
+
+    img {
+        grid-area: image; 
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 15px ;
+    }
+
     .image-placeholder { grid-area: image };
 
     .image-placeholder {

@@ -49,7 +49,7 @@ function Carousel({ content }) {
                             key={index}
                         >
                             { text && <h1> {text} </h1>}
-                            { button && <button> {button} </button>}
+                            { button && <button onClick={button.onClick}> {button.text} </button>}
                         </div>
                     )
                 }

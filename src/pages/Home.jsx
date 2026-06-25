@@ -8,6 +8,7 @@ import CarloCury from '../assets/logo/CarloCury.svg'
 import Ubuntu from '../assets/logo/Ubuntu.svg'
 import TSA from '../assets/logo/TSA.svg'
 import GCE from '../assets/logo/GCE.svg'
+import malocaInterior from '../assets/img/maloca-interior.jpg'
 
 import { useNavigate } from 'react-router-dom'
 
@@ -15,10 +16,8 @@ function Home() {
     const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.626266592157!2d-45.39332926689689!3d-23.61906604998831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd63000dfd49ad%3A0xc121f69cd63fe898!2sPonto%20de%20Cultura%20-%20Espa%C3%A7o%20Hart%C3%A3t-%20Acervo%20Ind%C3%ADgena!5e0!3m2!1spt-BR!2sbr!4v1779816037160!5m2!1spt-BR!2sbr" 
 
     const carouselContent = [
-        { image: 'https://files.catbox.moe/yjr0fg.png', text: 'O maior acervo de peças indígenas de todo o Litoral Norte', button: 'Saiba mais' },
-        { image: 'https://picsum.photos/1001', button: 'Click Me!' },
-        { image: 'https://picsum.photos/1002', text: 'Hello world!' },
-        { image: 'https://picsum.photos/1000', text: 'Lorem ipsum dolor sit amet porro dest martire der mador longdom', button: 'Click Me!' }
+        { image: 'https://files.catbox.moe/yjr0fg.png', text: 'O maior acervo de peças indígenas de todo o Litoral Norte', button: {text: 'Saiba mais', onClick: () => navigate('/sobre')} },
+        { image: 'https://falacaragua.com.br/wp-content/uploads/2023/03/Exp.-Desfolhar-de-Outono-em-exibicao-no-Espaco-Hartat.jpeg', text: 'Visite nossas exposições regulares', button: {text: 'Acessar exposições', onClick: () => navigate('/exposicoes')} },
     ]
 
     const highlightsContent = [
@@ -71,9 +70,10 @@ function Home() {
                         com base em estudos arqueológicos das culturas já extintas. 
                     </p>
 
-                    <button> Saiba mais </button>
+                    <button onClick={() => navigate('/sobre')}> Saiba mais </button>
 
-                    <div className="image-placeholder" />
+                    <img src={malocaInterior} loading='lazy' />
+                    {/*<div className="image-placeholder" />*/}
                 </section>
 
                 {
