@@ -11,7 +11,9 @@ function App() {
       <div className='layout'>
         <Sidebar />
         <div className='content'>
-          <PageRouter />
+          <main>
+            <PageRouter />
+          </main>
           <Footer />
         </div>
       </div>

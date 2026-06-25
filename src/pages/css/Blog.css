@@ -1,0 +1,162 @@
+.blogContainer {
+  background-color: #FDE8D3;
+  font-family: Arial, sans-serif;
+  color: #333;
+  min-height: 100vh;
+}
+
+.blogHeader {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.blogHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.blogTitle {
+  position: relative;
+  color: #FFF;
+  font-size: 2.5rem;
+  z-index: 1;
+}
+
+.blogBody {
+  padding: 40px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featuredPost {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.featuredImg {
+  width: 50%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.featuredText {
+  width: 50%;
+}
+
+.featuredText h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.featuredText p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.btnLeiaMais {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.blogControls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.searchContainer {
+  width: 50%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #CCC;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid #CCC;
+}
+
+.sortLabel {
+  font-weight: bold;
+}
+
+.sortSelect {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+.postsGrid {
+  column-count: 2;
+  column-gap: 30px;
+}
+
+.postCard {
+  background-color: #F7DDBE;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: inline-block;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.postImg {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.postContent {
+  padding: 20px;
+}
+
+.postContent h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.postContent p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.btnVerMais {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
