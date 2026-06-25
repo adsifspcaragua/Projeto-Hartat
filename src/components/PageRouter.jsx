@@ -7,6 +7,7 @@ import Externo from '../pages/Externo'
 import Exposicoes from '../pages/Exposicoes'
 import Acervo from "../pages/Acervo";
 import Cine from '../pages/Cine'
+import Sobre from  '../pages/sobre'
 
 function PageRouter() {
 
@@ -20,6 +21,8 @@ function PageRouter() {
                 <Route path='/exposicoes' element={<Exposicoes />}/>
                 <Route path="/cine-hartat" element={<Cine/>}/> 
                 <Route path="/atividades-externas" element={<Externo />}/>
+                <Route path="/sobre" element={<Sobre />}/>
+
             </Routes>
         </BrowserRouter>
     )

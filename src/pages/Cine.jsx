@@ -92,7 +92,7 @@ const featuredMovie = {
   synopsis: 'A Febre é um filme brasileiro. Justino, um indígena de 45 anos, trabalha como vigilante no porto de cargas de Manaus...',
   date: '12/04/2026',    
   price: 'Gratuito',
-  director: 'Maya Da-Rin'
+  banner_img: "https://i.ytimg.com/vi/aF1fsR9vvBo/maxresdefault.jpg"
 };
 
 export default function CatalogContent() {
@@ -110,7 +110,7 @@ export default function CatalogContent() {
         <h1 className="section-title">Em cartaz</h1>
         <div className="hero-banner" onClick={() => setSelectedMovie(featuredMovie)} style={{cursor: 'pointer'}}>
           <div className="hero-content">
-            <img src="https://i.ytimg.com/vi/aF1fsR9vvBo/maxresdefault.jpg" alt="banner do filme" className="festival-logo" />
+            <img src={featuredMovie.banner_img} alt="banner do filme" className="festival-logo" />
           </div>
         </div>
       </section>
