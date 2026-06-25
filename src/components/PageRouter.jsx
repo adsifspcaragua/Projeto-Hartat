@@ -8,6 +8,8 @@ import Exposicoes from '../pages/Exposicoes'
 import Acervo from "../pages/Acervo"
 import Cine from '../pages/Cine'
 import Blog from '../pages/Blog'
+import Sobre from '../pages/sobre'
+
 
 function PageRouter() {
 
@@ -21,6 +23,8 @@ function PageRouter() {
                 <Route path="/exposicoes" element={<Exposicoes />}/>
                 <Route path="/cine-hartat" element={<Cine/>}/>
                 <Route path="/blog" element={<Blog />}/>
+                <Route path="/sobre" element={<Sobre />}/>
+
             </Routes>
         </BrowserRouter>
     )
