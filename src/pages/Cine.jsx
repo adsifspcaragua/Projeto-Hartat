@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/Cine.css'
 
+/* old mock data for testing
 const movies = [
  { 
     id: 1, 
@@ -95,9 +96,61 @@ const featuredMovie = {
   banner_img: "https://i.ytimg.com/vi/aF1fsR9vvBo/maxresdefault.jpg"
 };
 
+*/
+
 export default function CatalogContent() {
   //Controla qual filme está selecionado para o Modal
   const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const [loading, setLoading] = useState(0)
+  const [movies, setMovies] = useState([])
+  const [featuredMovie, setFeaturedMovie] = useState(null)
+
+  const [search, setSearch] = useState('')
+  const [debouncedSearch, setDebouncedSearch] = useState('')
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
+
+  useEffect(() => {
+    const debounceTime = 500
+    const t = setTimeout(() => {
+      setDebouncedSearch(search)
+    }, debounceTime)
+
+    return () => clearTimeout(t)
+  }, [search])
+
+  useEffect(() => {
+    setPage(1)
+  }, [debouncedSearch])
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        setLoading(1)
+
+        const res = await fetch(`/api/movies?search=${debouncedSearch}&page=${page}&limit=12`)
+
+        if (!res.ok) {
+          setLoading(-1)
+          return
+        }
+
+        const data = await res.json()
+
+        if (!data) { console.log('local') }
+
+        setMovies(data.movies)
+        if (featuredMovie == null && data.movies.length > 0) { setFeaturedMovie(data.movies[0]) }
+        setTotalPages(data.pages)
+        setLoading(0)
+      } catch (err) {
+        setLoading(-1)
+      }
+    }
+
+    fetchMovies()
+  }, [debouncedSearch, page])
 
   //Fecha o modal
   const closeModal = () => setSelectedMovie(null);
@@ -107,20 +160,22 @@ export default function CatalogContent() {
     <div className="catalog-container padding-wrapper">
       
       <section className="now-playing">
-        <h1 className="section-title">Em cartaz</h1>
+        <h1 className="section-title">Em Cartaz</h1>
+        { loading == 1 && featuredMovie == null && <p> Carregando... </p> }
+        { loading == -1 && featuredMovie == null && <p> Erro ao carregar filme. </p> }
         <div className="hero-banner" onClick={() => setSelectedMovie(featuredMovie)} style={{cursor: 'pointer'}}>
           <div className="hero-content">
-            <img src={featuredMovie.banner_img} alt="banner do filme" className="festival-logo" />
+            { featuredMovie && <img src={`/api/images/${featuredMovie.banner_uuid}`} alt="banner do filme" className="festival-logo" /> }
           </div>
         </div>
       </section>
 
       <section className="catalog-list">
-        <h1 className="section-title">Exibicoes Passadas</h1>
+        <h1 className="section-title">Exibições Passadas</h1>
         
         <div className="controls">
           <div className="search-bar">
-            <input type="text" placeholder="Pesquisar Filmes..." />
+            <input type="text" placeholder="Pesquisar Filmes..." onChange={(e) => setSearch(e.target.value)} />
           </div>
           <div className="sort-bar">
             <h2>Ordenar:</h2>
@@ -131,26 +186,36 @@ export default function CatalogContent() {
         </div>
 
         <div className="movies-grid">
+          { loading == 1 && movies.length == 0 && <p> Carregando... </p> }
+          { loading == 0 && movies.length == 0 && <p> Nenhum filme encontrado. </p> }
+          { loading == -1 && movies.length == 0 && <p> Erro ao carregar filmes. </p> }
           {movies.map(movie => (
             <div key={movie.id} className="movie-card" onClick={() => setSelectedMovie(movie)} style={{cursor: 'pointer'}}>
-              <img src={movie.image} alt={movie.title} className="movie-poster" />
+              <img src={`/api/images/${movie.cover_uuid}`} alt={movie.title} className="movie-poster" />
               <div className="movie-info">
                 <h3>{movie.title}</h3>
                 <div className="movie-tags">
                   <span className="genre">{movie.genre}</span>
-                  <span className="rating">{movie.rating}</span>
+                  <span className="rating">{movie.age_rating}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        <div className='pagination'> 
+          <button onClick={() => setPage(prev => prev - 1)} disabled={page == 1} > {'<<'} Anterior </button>
+          <p> Página {page} de {totalPages} </p>
+          <button onClick={() => setPage(prev => prev + 1)} disabled={page == totalPages || totalPages == 0} > Próxima {'>>'} </button>
+        </div>
+
       </section>
 
       {selectedMovie && (
         <div className="modal-overlay" onClick={closeModal}>
              <button className="close-btn" onClick={closeModal}>X</button>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedMovie.image} alt={selectedMovie.title} className="movie-poster" />
+            <img src={`/api/images/${selectedMovie.cover_uuid}`} alt={selectedMovie.title} className="movie-poster" />
             
            
             
@@ -159,10 +224,11 @@ export default function CatalogContent() {
             </div>
 
             <div className="modal-body">
-              <p><strong>Data de exibição:</strong> {selectedMovie.date}</p>
+              <p><strong>Descrição:</strong><br/>{selectedMovie.description}</p>
               <br/>
-              <p><strong>Sinopse:</strong><br/>{selectedMovie.synopsis}</p>
+              <p><strong>Gênero:</strong><br/>{selectedMovie.genre}</p>
               <br/>
+              <p><strong>Classificação Indicativa:</strong><br/>{selectedMovie.age_rating}</p>
             </div>
           </div>
         </div>
