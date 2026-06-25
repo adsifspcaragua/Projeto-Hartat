@@ -1,0 +1,218 @@
+.blogContainer {
+  background-color: #FDE8D3;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.blogHeader {
+  height: clamp(200px, 25vh, 400px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.blogHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.blogTitle {
+  position: relative;
+  color: #FFF;
+  font-size: clamp(2rem, 4vw, 4.5rem)!important;
+  z-index: 1;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.blogBody {
+  padding: clamp(20px, 4vw, 60px) clamp(5%, 8vw, 15%);
+  margin: 0 auto;
+}
+
+.featuredPost {
+  display: flex;
+  gap: clamp(20px, 3vw, 40px);
+  margin-bottom: clamp(30px, 5vw, 60px);
+  align-items: center;
+}
+
+.featuredImg {
+  width: 50%;
+  border-radius: 15px;
+  object-fit: cover;
+  max-height: 600px;
+}
+
+.featuredText {
+  width: 50%;
+}
+
+.featuredText h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem) !important;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.featuredText p {
+  font-size: clamp(1rem, 1.5vw, 2rem) !important;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btnLeiaMais {
+  background-color: #4CAF50;
+  color: white;
+  padding: clamp(10px, 1.5vw, 15px) clamp(20px, 3vw, 35px);
+  border: none;
+  border-radius: 20px;
+  font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.btnLeiaMais:hover {
+  opacity: 0.9;
+}
+
+.blogControls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: clamp(20px, 4vw, 40px);
+  align-items: center;
+  gap: 15px;
+}
+
+.searchContainer {
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: clamp(10px, 1.5vw, 15px) 15px;
+  border: 1px solid #CCC;
+  border-radius: 20px;
+  font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+  box-sizing: border-box;
+  height: clamp(40px, 3vw, 80px) !important;
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #CCC;
+  height: clamp(40px, 3vw, 80px) !important;
+  
+}
+
+.sortLabel {
+  font-weight: bold;
+  font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+}
+
+.sortSelect {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+}
+
+.postsGrid {
+  column-count: 2;
+  column-gap: clamp(20px, 3vw, 40px);
+}
+
+.postCard {
+  background-color: #F7DDBE;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: clamp(20px, 3vw, 40px);
+  display: inline-block;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.postImg {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.postContent {
+  padding: clamp(15px, 2vw, 30px);
+}
+
+.postContent h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: clamp(1.3rem, 1.8vw, 3rem);
+}
+
+.postContent p {
+  font-size: clamp(1rem, 1.5vw, 2rem) !important;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.btnVerMais {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 2rem) !important;
+}
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ========================================= */
+
+/* Tablets e Monitores Menores */
+@media (max-width: 900px) {
+  .featuredPost {
+    flex-direction: column;
+  }
+  
+  .featuredImg, .featuredText {
+    width: 100%;
+  }
+
+  .blogControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchContainer {
+    width: 100%;
+  }
+  
+  .sortContainer {
+    justify-content: space-between;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+  .postsGrid {
+    column-count: 1; /* Uma coluna no celular para não espremer os cards */
+  }
+}
+
+/* Monitores Ultrawide e 4K */
+@media (min-width: 2000px) {
+  .postsGrid {
+    column-count: 3; /* Aproveita o espaço gigante da tela colocando 3 colunas */
+  }
+}
