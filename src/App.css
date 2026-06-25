@@ -17,8 +17,15 @@ main {
   overflow-y: auto;
 }
 
+.page-display {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
 .padding-wrapper {
-  padding: 8px;
+  padding: 0 20px;
 }
 
 @media only screen and (max-width: 600px) {
