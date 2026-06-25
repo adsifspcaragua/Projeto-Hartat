@@ -1,6 +1,9 @@
 import React from 'react';
 import './css/Sobre.css'
 import fotoHistoria from '../assets/historia.jfif'
+import claudio from '../assets/claudio.png'
+import carlo from '../assets/carlo.jpeg'
+
 function Sobre() {
   return (
     <div className="sobre-container">
@@ -29,6 +32,39 @@ function Sobre() {
           <img src={fotoHistoria} alt="historia" className="imagem-historia" />
         </div>
       </section>
+
+      <section className="autores-section">
+        <div className="text-content">
+         
+        <div className="text-box">
+             <h1 className="section-title">Quem Está por Trás</h1>
+            <p className='paragraph'>
+<h2>Carlo Cury:</h2> Arquiteto de formação, atua como artista plástico e ceramista desde 2012. É o responsável pela curadoria das peças, elaboração das expografias, produção das réplicas arqueológicas e pela condução das oficinas de cerâmica.            </p>
+          </div> 
+          <img src={carlo} alt="carlo" className="imagem-pessoa" />
+        </div>
+        <div className="text-content">
+        <div className="text-box">
+            <p className='paragraph'>
+<h2>Claudio Luiz Dias:</h2> Engenheiro Agrônomo, organiza e participa ativamente das expedições pelo Brasil e pelo exterior para conhecer etnias, museus e espaços culturais, viabilizando a ampliação da coleção. É dele também a responsabilidade pelo registro visual e escrito das atividades desenvolvidas.            </p>
+          </div> 
+          <img src={claudio} alt="claudio" className="imagem-pessoa" />
+        </div>
+      </section>
+
+      <section className="texto-princiapl-section">
+        <h1 className="section-title">Valores e Visão</h1>
+        <p className='paragraph'>
+Além de seus mantenedores, a maloca funciona como sede colaborativa para diversos coletivos culturais da região, incluindo o Grupo Ubuntu Caraguatatuba Cerâmica e Artes, o Grupo Tradições e Saberes Artesanais e o Grupo Caraguatatubense de Estudos de Questões Indígenas (GCE-TG).
+O Espaço Hartãt acredita na sustentabilidade cultural e no apoio comunitário. Isso se reflete de forma prática em sua loja física: toda a renda obtida com a venda de ornamentos e artesanatos é integralmente revertida para a compra de novos materiais, estimulando de forma direta o fazer tradicional das aldeias. Mais do que uma exposição, o local é um ponto de intercâmbio vivo que abraça a inclusão, recebendo desde pacientes da saúde municipal e professores em atividades de formação, até a promoção de vivências imersivas com os próprios indígenas.        </p>
+      </section>
+
+      <section className="texto-princiapl-section">
+        <p className='paragraph'>
+      As visitas ao acervo e a participação nas atividades são totalmente gratuitas e podem ser realizadas mediante agendamento prévio.
+      </p>
+      </section>
+      
     </div>
   );
 }
