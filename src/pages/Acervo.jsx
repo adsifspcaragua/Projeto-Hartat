@@ -1,5 +1,6 @@
 import './css/Acervo.css'
 import{ useState } from "react";
+import Ceramica from '../assets/img/Terena.png'
 
 const etnias = [
   "Todas", "Akroá-Gamela", "Apiaká", "Ashininca", "Asurini","Ayujá", "Baniwa", 
@@ -34,35 +35,37 @@ const dadosEtnias = {
 const obras = [
   { id: 1, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" },
+    imagem: Ceramica },
 
   { id: 2, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" },
+ imagem: Ceramica },
+
 
   { id: 3, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" },
+ imagem: Ceramica },
+
 
   { id: 4, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" },
+ imagem: Ceramica },
 
   { id: 5, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" },
+ imagem: Ceramica },
 
   { id: 6, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" },
+ imagem: Ceramica },
 
   { id: 7, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" },
+ imagem: Ceramica },
 
   { id: 8, 
     titulo: "Cerâmica Terena", 
-    imagem: "src/assets/img/Terena.png" }
+ imagem: Ceramica }
 ];
 
 

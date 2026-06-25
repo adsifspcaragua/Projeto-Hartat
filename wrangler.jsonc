@@ -17,16 +17,14 @@
 	"r2_buckets": [
 		{
 			"binding": "bucket",
-			"bucket_name": "hartat-bucket",
-			"remote": true
+			"bucket_name": "hartat-bucket"
 		}
 	],
 	"d1_databases": [
 		{
 			"binding": "db",
 			"database_name": "hartat-db",
-			"database_id": "1260e71b-087e-43c1-aeb1-761c05cd611b",
-			"remote": true
+			"database_id": "1260e71b-087e-43c1-aeb1-761c05cd611b"
 		}
 	],
 	/**

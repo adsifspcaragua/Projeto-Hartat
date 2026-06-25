@@ -302,10 +302,8 @@
   font-style: italic;
 }
 
-/* ==================================================== */
-/* 4. RESPONSIVIDADE (CELULARES)                        */
-/* ==================================================== */
-@media (max-width: 768px) {
+
+@media (max-width: 1050px) {
   .card-detalhe {
     flex-direction: column;
   }

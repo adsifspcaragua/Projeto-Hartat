@@ -1,5 +1,7 @@
 import './css/Footer.css'
 import { useEffect } from 'react';
+import logohartat from "../assets/logo/Hartat.svg"
+import logoceramica from "../assets/logo/CarloCury.svg"
 
 function Footer() {
 
@@ -27,8 +29,8 @@ function Footer() {
         <footer className='footer-wrapper'>
             <div className='footer'>
                 <div className='container'>
-                    <img src="./src/assets/logo/Hartat.svg" alt="Logomarca do espaço Hartãt" />
-                    <img src="./src/assets/logo/CarloCury.svg" alt="Logomarca do Ceramista Carlo Cury" />
+                    <img src={logohartat} alt="Logomarca do espaço Hartãt" />
+                    <img src={logoceramica} alt="Logomarca do Ceramista Carlo Cury" />
                     <div className='endereco'>
                         <p>Endereço:</p>
                         <p>Rua Bartolomeu Bueno da Silva, 1231 - Martim de Sá Caraguatatuba, SP - 11662-300</p>
