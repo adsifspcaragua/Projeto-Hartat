@@ -13,6 +13,7 @@
 .navigation-buttons {
     display: flex;
     justify-content: space-evenly;
+    gap: 5px;
 
     button {
         display: flex;

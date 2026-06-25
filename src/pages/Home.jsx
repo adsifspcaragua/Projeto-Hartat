@@ -1,13 +1,15 @@
 import { useEffect, useState, useRef } from 'react'
 import './css/Home.css'
+
 import Carousel from '../components/Carousel'
+import HorizontalScrollList from '../components/HorizontalScrollList'
 
 import CarloCury from '../assets/logo/CarloCury.svg'
 import Ubuntu from '../assets/logo/Ubuntu.svg'
 import TSA from '../assets/logo/TSA.svg'
 import GCE from '../assets/logo/GCE.svg'
+
 import { useNavigate } from 'react-router-dom'
-import HorizontalScrollList from '../components/HorizontalScrollList'
 
 function Home() {
     const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.626266592157!2d-45.39332926689689!3d-23.61906604998831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd63000dfd49ad%3A0xc121f69cd63fe898!2sPonto%20de%20Cultura%20-%20Espa%C3%A7o%20Hart%C3%A3t-%20Acervo%20Ind%C3%ADgena!5e0!3m2!1spt-BR!2sbr!4v1779816037160!5m2!1spt-BR!2sbr" 
@@ -74,10 +76,13 @@ function Home() {
                     <div className="image-placeholder" />
                 </section>
 
-                <section className="highlights">
-                    <h1> Destaques </h1>
-                    <HorizontalScrollList />
-                </section>
+                {
+                    /*Temporarily removed
+                    <section className="highlights">
+                        <h1> Destaques </h1>
+                        <HorizontalScrollList />
+                    </section>*/
+                }
 
                 <section className="introduction-video">
                     <h1> Conheça o espaço </h1>
