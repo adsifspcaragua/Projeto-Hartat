@@ -1,11 +1,5 @@
 // --- Imports ---
 import { useState, Fragment } from 'react'
-import alanWake1 from '../assets/alanwake1.jpg'
-import alanWake2 from '../assets/alanwake2.jpg'
-import alanWake3 from '../assets/alanwake3.jpg'
-import alanWake4 from '../assets/alanwake4.jpg'
-import alanWake5 from '../assets/alanwake5.jpg'
-import alanWake6 from '../assets/alanwake6.jpg'
 import post1 from '../assets/post1.png'
 import post2 from '../assets/post2.png'
 import post3 from '../assets/post3.png' 
@@ -19,9 +13,6 @@ const ATIVIDADES = [
   { id: 1, titulo: 'Oficina de Cerâmica na Costa Rica', descricao: 'Fizemos uma oficina de Cerâmica na Costa Rica, onde desenvolvemos atividades de artesanato de vasos e outras obras...', imagem: post1, pais: 'CR', tipo: 'Cerâmica' },
   { id: 2, titulo: 'Visitia Rio Silveiras - 2025', descricao: 'Visitamos a aldeia do Rio Silveiras no município de Bettiga, onde participamos de atividades como artesanato, danças e muitos outros...', imagem: post2, pais: 'BR', tipo: 'Artesanato' },
   { id: 3, titulo: 'Trujillo - Costa Norte do Peru', descricao: 'Visita da costa norte do Peru para aquisição de novas peças para o nosso acervo...', imagem: post3, pais: 'PE', tipo: 'Artesanato' },
-  { id: 4, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake4, pais: 'BR', tipo: 'Dança' },
-  { id: 5, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake5, pais: 'BR', tipo: 'Cerâmica' },
-  { id: 6, titulo: 'Título da atividade', descricao: 'Descrição...', imagem: alanWake6, pais: 'BR', tipo: 'Artesanato' },
 ]
 
 const PER_PAGE = 6
