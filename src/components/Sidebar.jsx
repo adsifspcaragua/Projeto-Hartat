@@ -16,10 +16,10 @@ function Sidebar() {
     ];
 
     const socialLinks = [
-        { icon: 'fa-whatsapp', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
-        { icon: 'fa-facebook', url: '#' },
-        { icon: 'fa-youtube', url: '#' }
+        { icon: 'fa-whatsapp', url: 'https://wa.me/5512981950786' },
+        { icon: 'fa-instagram', url: 'https://www.instagram.com/espacohartat/' },
+        { icon: 'fa-facebook', url: 'https://www.facebook.com/profile.php?id=61574629659741' },
+        { icon: 'fa-youtube', url: 'https://www.youtube.com/@claudioluizdias8978' }
     ];
 
     return (
