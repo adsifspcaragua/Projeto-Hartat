@@ -11,9 +11,15 @@ function Sidebar() {
     };
 
     const menuItems = [
-        'Início', 'Sobre', 'Programação', 'Projetos', 
-        'Acervo', 'Cine Hartat', 'Intercâmbios'
-    ];
+        {name: 'Início', url: '/'}, 
+        {name: 'Sobre', url: '/sobre' }, 
+        {name: 'Acervo', url: '/acervo' }, 
+        {name: 'Exposições', url: '/exposicoes' }, 
+        {name: 'Externo', url: '/atividades-externas' }, 
+        {name: 'Cine Hartãt', url: '/cine-hartat' }, 
+        {name: 'Programação', url: '/programacao' }, 
+        {name: 'Blog', url: '/blog' }, 
+    ]
 
     const socialLinks = [
         { icon: 'fa-whatsapp', url: 'https://wa.me/5512981950786' },
@@ -43,11 +49,10 @@ function Sidebar() {
             <div className={`sidebar_content ${isOpen ? 'open' : ''}`}>
                 <nav className="sidebar_menu">
                     {menuItems.map((item, index) => {
-                        const cleanHref = item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-');
                         return (
                             <React.Fragment key={index}>
-                                <a href={`#${cleanHref}`} className="sidebar_menu_item">
-                                    <span className="text_button">{item} &gt;</span>
+                                <a href={`${item.url}`} className="sidebar_menu_item">
+                                    <span className="text_button">{item.name} &gt;</span>
                                 </a>
                                 {index < menuItems.length - 1 && <div className="separador" />}
                             </React.Fragment>
